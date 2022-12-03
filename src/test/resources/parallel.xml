@@ -4,7 +4,7 @@
     <test name="Smoke">
         <classes>
            <class name="tests.CalculatorTest"/>
-            <class name="tests.PriorityTest"></class>
+            <class name="tests.PriorityTest"/>
         </classes>
     </test>
     <test name="Regression Test">
