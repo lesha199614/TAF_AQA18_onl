@@ -3,6 +3,8 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+
 public class CalculatorTest extends BaseTest{
 
     @Test
@@ -12,12 +14,12 @@ public class CalculatorTest extends BaseTest{
 
     @Test (enabled = false)
     public void testSum1(){
-        Assert.assertEquals(calculator.sum(2,3), 5, "Неверная сумма");
+        Assert.assertEquals(calculator.sum(2,3), 6, "Неверная сумма");
     }
 
     @Test (description = "Тест с описанием")
     public void testSum2(){
-        Assert.assertEquals(calculator.sum(2,3), 5, "Неверная сумма");
+        Assert.assertEquals(calculator.sum(2,3), 6, "Неверная сумма");
     }
 
     @Test (testName = "Тест с названием")
@@ -36,4 +38,9 @@ public class CalculatorTest extends BaseTest{
         Assert.assertEquals(calculator.sum(2,3), 5, "Неверная сумма");
     }
 
+    @Test (expectedExceptions = NullPointerException.class)
+    public void exceptionTest(){
+        List list = null;
+        Dimension size = list.size();
+    }
 }
