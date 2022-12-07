@@ -13,12 +13,12 @@ public class BasicLocatorsTest {
 
 
     @BeforeMethod
-    public void setUp(){
+    public void setUp() {
         driver = new BrowserFactory().getDriver();
     }
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 

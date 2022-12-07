@@ -15,7 +15,7 @@ public class SmokeTest {
 
 
     @BeforeMethod
-    public void setUp(){
+    public void setUp() {
         BrowserFactory browserFactory = new BrowserFactory();
         driver = browserFactory.getDriver();
     }
@@ -23,7 +23,7 @@ public class SmokeTest {
 
     @Test
     public void validateIKTCalculatorTest() throws InterruptedException {
-     driver.get("https://clinic-cvetkov.ru/company/kalkulyator-imt/");
+        driver.get("https://clinic-cvetkov.ru/company/kalkulyator-imt/");
 
         WebElement heightInput = driver.findElement(By.name("height"));
         WebElement weightInput = driver.findElement(By.name("weight"));
@@ -36,11 +36,11 @@ public class SmokeTest {
 //        Thread.sleep(5000);
 
         WebElement result = driver.findElement(By.id("imt-result"));
-        Assert.assertEquals(result.getText(),"17.3 - Недостаточная (дефицит) масса тела");
+        Assert.assertEquals(result.getText(), "17.3 - Недостаточная (дефицит) масса тела");
     }
 
     @Test
-    public void validateSKFTest () throws InterruptedException {
+    public void validateSKFTest() throws InterruptedException {
         driver.get("http://13gp.by/informatsiya/meditsinskie-kalkulyatory/995-raschet-skorosti-klubochkovoj-filtratsii-skf");
         WebElement selectWebElement = driver.findElement(By.id("oSex"));
         Select selectSex = new Select(selectWebElement);
@@ -57,17 +57,16 @@ public class SmokeTest {
         driver.findElement(By.id("oHeight")).sendKeys("163");
         driver.findElement(By.cssSelector("[type='button']")).click();
 
-        Assert.assertEquals(driver.findElement(By.id("txtMDRD")).getText(),"MDRD: 74 (мл/мин/1,73кв.м)");
-        Assert.assertEquals(driver.findElement(By.id("txtMDRD1")).getText(),"ХБП: 2 стадия (при наличии почечного повреждения)");
-        Assert.assertEquals(driver.findElement(By.id("txtCG")).getText(),"Cockroft-Gault: 70 (мл/мин)");
-        Assert.assertEquals(driver.findElement(By.id("txtBSA")).getText(),"Поверхность тела:1.58 (кв.м)");
+        Assert.assertEquals(driver.findElement(By.id("txtMDRD")).getText(), "MDRD: 74 (мл/мин/1,73кв.м)");
+        Assert.assertEquals(driver.findElement(By.id("txtMDRD1")).getText(), "ХБП: 2 стадия (при наличии почечного повреждения)");
+        Assert.assertEquals(driver.findElement(By.id("txtCG")).getText(), "Cockroft-Gault: 70 (мл/мин)");
+        Assert.assertEquals(driver.findElement(By.id("txtBSA")).getText(), "Поверхность тела:1.58 (кв.м)");
 
     }
 
-    
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }
