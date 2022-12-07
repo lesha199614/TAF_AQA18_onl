@@ -10,7 +10,7 @@ public class DataProviderTest {
 
     @Test(dataProvider = "dataFotSumTest", dataProviderClass = StaticProvider.class, threadPoolSize = 3)
     public void testSum(int a, int b, int expected) {
-        Assert.assertEquals(calculator.sum(a,b), expected, "Неверная сумма");
+        Assert.assertEquals(calculator.sum(a, b), expected, "Неверная сумма");
     }
 
 }

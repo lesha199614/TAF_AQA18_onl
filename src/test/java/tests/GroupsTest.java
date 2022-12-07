@@ -22,7 +22,7 @@ public class GroupsTest {
         Assert.assertEquals(calculator.sum(2, 3), 5, "Неверная сумма");
     }
 
-    @Test(groups = {"smoke","regression"})
+    @Test(groups = {"smoke", "regression"})
     public void testc() {
         Assert.assertEquals(calculator.sum(2, 3), 5, "Неверная сумма");
     }
