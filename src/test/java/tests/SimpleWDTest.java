@@ -9,21 +9,23 @@ import org.testng.annotations.Test;
 public class SimpleWDTest {
 
     @Test
-    public void SimpleWDTest(){
+    public void SimpleWDTest() {
         SimpleDriver simpleDriver = new SimpleDriver();
         WebDriver driver = simpleDriver.getDriver();
         driver.quit();
 
 
     }
+
     @Test
-    public void AdvancedWDTest(){
+    public void AdvancedWDTest() {
         AdvancedDriver advancedDriver = new AdvancedDriver();
         WebDriver driver = advancedDriver.getDriver();
         driver.quit();
     }
+
     @Test
-    public void browserFactoryTest(){
+    public void browserFactoryTest() {
         BrowserFactory browserFactory = new BrowserFactory();
         WebDriver driver = browserFactory.getDriver();
         driver.quit();
