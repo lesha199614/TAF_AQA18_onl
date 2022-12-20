@@ -27,15 +27,24 @@ public class WaitsService {
         wait = new WebDriverWait(driver, timeout);
     }
 
-    public WebElement waitForVisibility(By by) {
-       return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+    public WebElement waitForVisibilityBy(By by) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
     public boolean waitForElementInvisible(WebElement webElement) {
-       return wait.until(ExpectedConditions.invisibilityOf(webElement));
+        return wait.until(ExpectedConditions.invisibilityOf(webElement));
     }
 
-    public WebElement fluentWaitForElement (By by) {
+    public List<WebElement> waitForAllVisibleElementsLocatedBy(By locator) {
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+    }
+
+    public WebElement waitForExists(By locator) {
+        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
+
+
+    public WebElement fluentWaitForElement(By by) {
         Wait<WebDriver> fluent = new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofMillis(50))
@@ -43,14 +52,4 @@ public class WaitsService {
 
         return fluent.until(driver -> driver.findElement(by));
     }
-
-    public WebElement waitForExists(By locator) {
-        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-    }
-
-    public List<WebElement> waitForAllVisibleElementsLocatedBy(By locator) {
-        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
-    }
-
-
 }
