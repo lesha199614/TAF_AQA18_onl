@@ -42,13 +42,13 @@ public class CssSelectorTest {
         Assert.assertTrue(driver.findElement(By.cssSelector("h1")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.tagName("h1")).isDisplayed());
 
-        //Поиск по class name c учетом иерархии
+        // Поиск по tag name и значению class
         Assert.assertTrue(driver.findElement(By.cssSelector("div.intro")).isDisplayed());
 
-        //Поиск по tag name и значение class name
+        //Поиск по class name c учетом иерархии
         Assert.assertEquals(driver.findElements(By.cssSelector("#Lastname .markup")).size(), 2);
 
-        //Поиск всех элементов с  tag name h1 b p
+        //Поиск всех элементов с  tag name h1 и p
         Assert.assertEquals(driver.findElements(By.cssSelector("h1, p")).size(), 8);
 
         // Поиск всех элементов с тэгом p у которых непосредственный родитель с тэгом div
