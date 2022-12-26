@@ -69,7 +69,7 @@ public class CssSelectorTest {
         // Поиск всех элементов у которых присутствует аттрибут id со значением начинающимся на какое-то value
         Assert.assertEquals(2, driver.findElements(By.cssSelector("[id^=L]")).size());
 
-        // Поиск всех элементов у которых присутствует аттрибут id с начинающимся словом value
+        // Поиск всех элементов у которых присутствует аттрибут id с начинающимся словом my
         Assert.assertEquals(1, driver.findElements(By.cssSelector("[id|=my]")).size());
 
         // Поиск всех элементов у которых присутствует аттрибут title со значением содержащим слово целиком
