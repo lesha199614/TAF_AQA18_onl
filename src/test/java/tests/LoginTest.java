@@ -5,6 +5,7 @@ import configuration.ReadProperties;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import pages.ProductsPage;
 
 public class LoginTest extends BaseTest {
 
@@ -15,22 +16,30 @@ public class LoginTest extends BaseTest {
         loginPage.getPasswordInput().sendKeys(ReadProperties.password());
         loginPage.getLogInButtonInput().click();
 
-        //Assert.assertTrue(new DashBoardPage(driver).isPageOpened());
+        Assert.assertTrue(new ProductsPage(driver).isPageOpened());
     }
 
 
 
-    //@Test
+    @Test
     public void loginSuccessfulTest() {
 
         Assert.assertTrue(userStep.loginSuccessful(ReadProperties.username(),ReadProperties.password())
                 .isPageOpened());
     }
-   // @Test
+    @Test
     public void loginIncorrectTest() {
         Assert.assertEquals(userStep.loginIncorrect(ReadProperties.username(),"sdfadaa")
                 .getErrorTextElement().getText(),
-                "Email/Login or Password is incorrect. Please try again."
+                "Epic sadface: Username and password do not match any user in this service"
         );
+    }
+
+    @Test
+    public void end2end(){
+        userStep.loginSuccessful(ReadProperties.username(),ReadProperties.password());
+
+        userStep.openFirstItem();
+        //Assert.assertTrue(userStep.openFirstItem().isPageOpened());
     }
 }

@@ -2,11 +2,13 @@ package steps;
 
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
-import pages.DashBoardPage;
+import pages.FirstProductPage;
 import pages.LoginPage;
+import pages.ProductsPage;
 
 public class UserStep extends BaseStep {
     private LoginPage loginPage;
+    private ProductsPage productsPage;
 
     public UserStep(WebDriver driver) {
         super(driver);
@@ -14,22 +16,28 @@ public class UserStep extends BaseStep {
         loginPage = new LoginPage(driver);
     }
 
-    public void login(String email, String psw) {
-        loginPage.getUsernameInput().sendKeys(email);
+    public void login(String username, String psw) {
+        loginPage.getUsernameInput().sendKeys(username);
         loginPage.getPasswordInput().sendKeys(psw);
         loginPage.getLogInButtonInput().click();
     }
 
-    public DashBoardPage loginSuccessful(String email, String psw) {
+    public ProductsPage loginSuccessful(String email, String psw) {
         login(email, psw);
 
-        return new DashBoardPage(driver);
+        return new ProductsPage(driver);
     }
 
     public LoginPage loginIncorrect(String email, String psw) {
         login(email, psw);
 
         return loginPage;
+    }
+
+    public FirstProductPage openFirstItem(){
+        productsPage.getFirstItem().click();
+
+        return new FirstProductPage(driver);
     }
 
 }
