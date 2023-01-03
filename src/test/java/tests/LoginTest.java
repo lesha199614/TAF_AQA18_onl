@@ -20,26 +20,27 @@ public class LoginTest extends BaseTest {
     }
 
 
-
     @Test
     public void loginSuccessfulTest() {
 
-        Assert.assertTrue(userStep.loginSuccessful(ReadProperties.username(),ReadProperties.password())
+        Assert.assertTrue(userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password())
                 .isPageOpened());
     }
+
     @Test
     public void loginIncorrectTest() {
-        Assert.assertEquals(userStep.loginIncorrect(ReadProperties.username(),"sdfadaa")
-                .getErrorTextElement().getText(),
+        Assert.assertEquals(userStep.loginIncorrect(ReadProperties.username(), "sdfadaa")
+                        .getErrorTextElement().getText(),
                 "Epic sadface: Username and password do not match any user in this service"
         );
     }
 
     @Test
-    public void end2end(){
-        userStep.loginSuccessful(ReadProperties.username(),ReadProperties.password());
-
-        userStep.openFirstItem();
-        //Assert.assertTrue(userStep.openFirstItem().isPageOpened());
+    public void end2end() {
+        userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
+        navigationSteps.openFirstItem();
+        userStep.addToCartFromFirstProductPage();
+        navigationSteps.moveToCartFromFirstProductPage();
+        Assert.assertTrue(navigationSteps.moveToCartFromFirstProductPage().isPageOpened());
     }
 }

@@ -1,19 +1,25 @@
 package steps;
 
 import baseEntities.BaseStep;
+import configuration.ReadProperties;
 import org.openqa.selenium.WebDriver;
-import pages.FirstProductPage;
-import pages.LoginPage;
-import pages.ProductsPage;
+import pages.*;
 
 public class UserStep extends BaseStep {
     private LoginPage loginPage;
     private ProductsPage productsPage;
+    private FirstProductPage firstProductPage;
+    private CartPage cartPage;
+    private CheckoutPage checkoutPage;
 
     public UserStep(WebDriver driver) {
         super(driver);
 
         loginPage = new LoginPage(driver);
+        productsPage = new ProductsPage(driver);
+        firstProductPage = new FirstProductPage(driver);
+        cartPage = new CartPage(driver);
+        checkoutPage = new CheckoutPage(driver);
     }
 
     public void login(String username, String psw) {
@@ -34,10 +40,22 @@ public class UserStep extends BaseStep {
         return loginPage;
     }
 
-    public FirstProductPage openFirstItem(){
-        productsPage.getFirstItem().click();
-
-        return new FirstProductPage(driver);
+    public void addToCartFromProductsPage() {
+        productsPage.getFirstItemAddToCart().click();
     }
 
+    public void addToCartFromFirstProductPage() {
+        firstProductPage.getAddToCart().click();
+    }
+
+    public void checkoutCart() {
+        cartPage.getCheckout().click();
+    }
+
+    public void fillCheckoutForm() {
+        checkoutPage.getFirstName().sendKeys(ReadProperties.firstName());
+        checkoutPage.getLastName().sendKeys(ReadProperties.lastName());
+        checkoutPage.getZip().sendKeys(ReadProperties.zip());
+
+    }
 }

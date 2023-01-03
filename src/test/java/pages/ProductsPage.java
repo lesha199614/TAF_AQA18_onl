@@ -9,6 +9,8 @@ public class ProductsPage extends BasePage {
     private final By headerTitleHeaderLocator = By.className("title");
     private final By firstItemLocator = By.id("item_4_title_link");
     private final By firstItemAddToCartLocator = By.id("add-to-cart-sauce-labs-backpack");
+    private final By cartLocator = By.className("shopping_cart_link");
+
     String pagePath = "inventory.html";
 
     public ProductsPage(WebDriver driver) {
@@ -29,5 +31,8 @@ public class ProductsPage extends BasePage {
     }
     public WebElement getFirstItemAddToCart(){
      return driver.findElement(firstItemAddToCartLocator);
+    }
+    public WebElement getCart(){
+     return driver.findElement(cartLocator);
     }
 }
