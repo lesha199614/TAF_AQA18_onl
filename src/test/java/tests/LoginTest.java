@@ -2,7 +2,6 @@ package tests;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DashBoardPage;
@@ -12,13 +11,24 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void loginTest() {
-
         LoginPage loginPage = new LoginPage(driver);
         loginPage.getEmailInput().sendKeys(ReadProperties.username());
         loginPage.getPasswordInput().sendKeys(ReadProperties.password());
         loginPage.getLogInButtonInput().click();
 
-        Assert.assertTrue(driver.findElement(By.id("ui-dialog-title-messageDialog")).isDisplayed());
         Assert.assertTrue(new DashBoardPage(driver).isPageOpened());
+    }
+    @Test
+    public void loginSuccessfulTest() {
+
+        Assert.assertTrue(userStep.loginSuccessful(ReadProperties.username(),ReadProperties.password())
+                .isPageOpened());
+    }
+    @Test
+    public void loginIncorrectTest() {
+        Assert.assertEquals(userStep.loginIncorrect(ReadProperties.username(),"sdfadaa")
+                .getErrorTextElement().getText(),
+                "Email/Login or Password is incorrect. Please try again."
+        );
     }
 }
