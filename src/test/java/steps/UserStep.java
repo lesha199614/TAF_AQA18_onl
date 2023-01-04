@@ -48,14 +48,16 @@ public class UserStep extends BaseStep {
         firstProductPage.getAddToCart().click();
     }
 
-    public void checkoutCart() {
-        cartPage.getCheckout().click();
-    }
-
-    public void fillCheckoutForm() {
+    public CheckoutPage fillCheckoutForm() {
         checkoutPage.getFirstName().sendKeys(ReadProperties.firstName());
         checkoutPage.getLastName().sendKeys(ReadProperties.lastName());
         checkoutPage.getZip().sendKeys(ReadProperties.zip());
+        checkoutPage.getContinue().click();
+        return checkoutPage;
+    }
 
+    public CheckoutPage submitForm() {
+        checkoutPage.getFinish().click();
+        return checkoutPage;
     }
 }

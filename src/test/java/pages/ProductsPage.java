@@ -26,13 +26,15 @@ public class ProductsPage extends BasePage {
         super.openPageByUrl(pagePath);
     }
 
-    public WebElement getFirstItem(){
-     return driver.findElement(firstItemLocator);
+    public WebElement getFirstItem() {
+        return driver.findElement(firstItemLocator);
     }
-    public WebElement getFirstItemAddToCart(){
-     return driver.findElement(firstItemAddToCartLocator);
+
+    public WebElement getFirstItemAddToCart() {
+        return driver.findElement(firstItemAddToCartLocator);
     }
-    public WebElement getCart(){
-     return driver.findElement(cartLocator);
+
+    public WebElement getCart() {
+        return driver.findElement(cartLocator);
     }
 }

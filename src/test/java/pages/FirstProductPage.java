@@ -28,6 +28,7 @@ public class FirstProductPage extends BasePage {
     public WebElement getAddToCart() {
         return driver.findElement(addToCartLocator);
     }
+
     public WebElement getCart() {
         return driver.findElement(cartLocator);
     }

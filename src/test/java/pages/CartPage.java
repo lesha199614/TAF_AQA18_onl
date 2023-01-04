@@ -25,7 +25,7 @@ public class CartPage extends BasePage {
         super.openPageByUrl(pagePath);
     }
 
-    public WebElement getCheckout(){
+    public WebElement getCheckout() {
         return driver.findElement(checkoutButton);
     }
 }

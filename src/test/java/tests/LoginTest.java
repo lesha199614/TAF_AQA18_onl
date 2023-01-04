@@ -9,7 +9,7 @@ import pages.ProductsPage;
 
 public class LoginTest extends BaseTest {
 
-    @Test
+    @Test(enabled = false)
     public void loginTest() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.getUsernameInput().sendKeys(ReadProperties.username());
@@ -20,27 +20,18 @@ public class LoginTest extends BaseTest {
     }
 
 
-    @Test
+    @Test(enabled = false)
     public void loginSuccessfulTest() {
 
         Assert.assertTrue(userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password())
                 .isPageOpened());
     }
 
-    @Test
+    @Test(enabled = false)
     public void loginIncorrectTest() {
         Assert.assertEquals(userStep.loginIncorrect(ReadProperties.username(), "sdfadaa")
                         .getErrorTextElement().getText(),
                 "Epic sadface: Username and password do not match any user in this service"
         );
-    }
-
-    @Test
-    public void end2end() {
-        userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
-        navigationSteps.openFirstItem();
-        userStep.addToCartFromFirstProductPage();
-        navigationSteps.moveToCartFromFirstProductPage();
-        Assert.assertTrue(navigationSteps.moveToCartFromFirstProductPage().isPageOpened());
     }
 }

@@ -39,4 +39,8 @@ public class NavigationSteps extends BaseStep {
         return new CartPage(driver);
     }
 
+    public CheckoutPage checkoutCart() {
+        cartPage.getCheckout().click();
+        return checkoutPage;
+    }
 }
