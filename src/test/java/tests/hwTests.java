@@ -21,8 +21,12 @@ public class hwTests extends BaseTest {
     }
 
     @Test
-    public void dynamicControls () {
+    public void dynamicControls () throws InterruptedException {
         driver.get("http://the-internet.herokuapp.com/dynamic_controls");
-        WebElement checkbox = waitsService.waitForVisibilityBy(By.)
+        WebElement checkbox = waitsService.waitForVisibilityBy(By.cssSelector("[type='checkbox']"));
+        checkbox.click();
+        //actions.click(checkbox).build().perform(); //alternative
+        Thread.sleep(2000);
+        WebElement removeButton = waitsService.waitForVisibilityBy(By.)
     }
 }
