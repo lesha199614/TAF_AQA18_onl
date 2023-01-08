@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.File;
+
 public class HwTests extends BaseTest {
 
     @Test
@@ -43,7 +45,7 @@ public class HwTests extends BaseTest {
     }
 
     @Test
-    public void uploadFileTest(){
+    public void uploadFileTest() {
         driver.get("http://the-internet.herokuapp.com/upload");
         WebElement fileUpload = waitsService.waitForVisibilityBy(By.id("file-upload"));
         String filePath = "/Users/aliakseiv/Documents/IdeaTMS/Auto/TAF_AQA18_onl/TAF_AQA18_onl/src/test/resources/playtika.png";
@@ -52,22 +54,33 @@ public class HwTests extends BaseTest {
         WebElement uploadButton = waitsService.waitForVisibilityBy(By.id("file-submit"));
         uploadButton.click();
         WebElement fileNameLocator = waitsService.waitForVisibilityBy(By.id("uploaded-files"));
-        Assert.assertEquals(fileNameLocator.getText(),"playtika.png");
+        Assert.assertEquals(fileNameLocator.getText(), "playtika.png");
     }
 
     @Test
-    public void iFrameTest () {
+    public void iFrameTest() {
         driver.get("http://the-internet.herokuapp.com/iframe");
         WebElement iFrameLocator = waitsService.waitForVisibilityBy(By.cssSelector("#mce_0_ifr"));
         driver.switchTo().frame(iFrameLocator);
         WebElement textLocator = waitsService.waitForVisibilityBy(By.cssSelector("#tinymce > p"));
-        Assert.assertEquals(textLocator.getText(),"Your content goes here.");
+        Assert.assertEquals(textLocator.getText(), "Your content goes here.");
     }
 
     @Test
-    public void downloadTest() {
-        //chromePrefs.put("download.default_directory", BrowserFactory.class.getClassLoader().getResource("resources").getPath()
+    public void downloadTest() throws InterruptedException {
         driver.get("http://the-internet.herokuapp.com/download");
-        WebElement firstFile = waitsService.waitForVisibilityBy(By.)
+        WebElement firstFile = waitsService.waitForVisibilityBy(By.xpath("//div[@class='example']/a[1]"));
+        String firstFileName = firstFile.getText();
+        firstFile.click();
+        Thread.sleep(5000);
+        File folderToSave = new File("/Users/aliakseiv/Downloads");
+        File[] listOfFiles = folderToSave.listFiles();
+        boolean found = false;
+        for (File listOfFile : listOfFiles) {
+            if (listOfFile.getName().matches(firstFileName)) {
+                found = true;
+            }
+        }
+        Assert.assertTrue(found);
     }
 }
