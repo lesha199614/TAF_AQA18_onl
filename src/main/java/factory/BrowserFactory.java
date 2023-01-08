@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
+import java.util.HashMap;
 
 public class BrowserFactory {
     private WebDriver driver = null;
@@ -19,6 +20,9 @@ public class BrowserFactory {
                 DriverManagerType driverManagerType = DriverManagerType.CHROME;
                 WebDriverManager.getInstance(driverManagerType).setup();
 
+                HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+                chromePrefs.put("download.default_directory", "src/test/resources");
+
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.setHeadless(ReadProperties.isHeadless());
                 chromeOptions.addArguments("--disable-gpu");
@@ -26,6 +30,7 @@ public class BrowserFactory {
                 chromeOptions.addArguments("--ignore-certificate-errors");
                 chromeOptions.addArguments("--silent");
                 chromeOptions.addArguments("--start-maximized");
+
 
                 driver = new ChromeDriver(chromeOptions);
 

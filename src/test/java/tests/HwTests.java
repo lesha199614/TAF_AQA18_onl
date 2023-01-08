@@ -60,7 +60,14 @@ public class HwTests extends BaseTest {
         driver.get("http://the-internet.herokuapp.com/iframe");
         WebElement iFrameLocator = waitsService.waitForVisibilityBy(By.cssSelector("#mce_0_ifr"));
         driver.switchTo().frame(iFrameLocator);
-
+        WebElement textLocator = waitsService.waitForVisibilityBy(By.cssSelector("#tinymce > p"));
+        Assert.assertEquals(textLocator.getText(),"Your content goes here.");
     }
 
+    @Test
+    public void downloadTest() {
+        //chromePrefs.put("download.default_directory", BrowserFactory.class.getClassLoader().getResource("resources").getPath()
+        driver.get("http://the-internet.herokuapp.com/download");
+        WebElement firstFile = waitsService.waitForVisibilityBy(By.)
+    }
 }
