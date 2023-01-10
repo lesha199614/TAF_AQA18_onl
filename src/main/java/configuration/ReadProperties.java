@@ -16,6 +16,7 @@ public class ReadProperties {
     }
 
     public static String getUrl() {
+
         return properties.getProperty("url");
     }
 
@@ -37,5 +38,9 @@ public class ReadProperties {
 
     public static int timeout() {
         return Integer.parseInt(properties.getProperty("timeout"));
+    }
+
+    public static String getFolderPath() {
+        return properties.getProperty("folderPath");
     }
 }

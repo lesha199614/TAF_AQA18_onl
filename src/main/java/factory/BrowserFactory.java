@@ -19,7 +19,6 @@ public class BrowserFactory {
             case "chrome":
                 DriverManagerType driverManagerType = DriverManagerType.CHROME;
                 WebDriverManager.getInstance(driverManagerType).setup();
-                String downloadFilepath = "/Users/aliakseiv/Downloads/Test";
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.setHeadless(ReadProperties.isHeadless());
                 chromeOptions.addArguments("--disable-gpu");
@@ -27,9 +26,10 @@ public class BrowserFactory {
                 chromeOptions.addArguments("--ignore-certificate-errors");
                 chromeOptions.addArguments("--silent");
                 chromeOptions.addArguments("--start-maximized");
-                HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+                HashMap<String, Object> chromePrefs = new HashMap<>();
                 chromePrefs.put("profile.default_content_settings.popups", 0);
-                chromePrefs.put("download.default_directory", downloadFilepath);
+                chromePrefs.put("download.default_directory", ReadProperties.getFolderPath());
+                chromeOptions.setExperimentalOption("prefs", chromePrefs);
 
                 driver = new ChromeDriver(chromeOptions);
 
