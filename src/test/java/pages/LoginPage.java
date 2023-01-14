@@ -1,9 +1,9 @@
 package pages;
 
 import baseEntities.BasePage;
+import elements.UIElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class LoginPage extends BasePage {
     // Блок описания локаторов для эментов
@@ -23,8 +23,10 @@ public class LoginPage extends BasePage {
     }
 
     // Блок атомарных методов
-    public WebElement getEmailInput() { return waitsService.waitForVisibilityBy(emailInputLocator);}
-    public WebElement getPassword() { return waitsService.waitForVisibilityBy(passwordInputLocator);}
-    public WebElement getLogInButton() { return waitsService.waitForVisibilityBy(logInButtonLocator);}
-    public WebElement getErrorTextElement() { return waitsService.waitForVisibilityBy(errorTextLocator); }
+    public UIElement getEmailInput() { return new UIElement(driver, emailInputLocator);}
+    public UIElement getPassword() { return new UIElement(driver, passwordInputLocator);}
+    public UIElement getLogInButton() { return new UIElement(driver, logInButtonLocator);}
+    public UIElement getErrorTextElement() { return new UIElement(driver, errorTextLocator); }
+
+
 }

@@ -6,7 +6,6 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Issue;
 import io.qameta.allure.Link;
 import io.qameta.allure.TmsLink;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DashboardPage;
@@ -47,11 +46,11 @@ public class LoginTest extends BaseTest {
     }
 
     //@Test
-    public void addProjectTest() {
-        userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
-        projectSteps.addProject("WP_01");
-
-        Assert.assertEquals(driver.findElement(By.className("page_title")).getText(),
-                "WP_01");
-    }
+//    public void addProjectTest() {
+//        userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
+//        projectSteps.addProject("WP_01");
+//
+//        Assert.assertEquals(driver.findElement(By.className("page_title")).getText(),
+//                "WP_01");
+//    }
 }
