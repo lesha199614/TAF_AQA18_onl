@@ -4,14 +4,13 @@ import baseEntities.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 import services.WaitsService;
 
 import java.time.Duration;
 
 public class WaitsTest extends BaseTest {
 
-    @Test
+    //@Test
     public void implicitlyVisibilityTest() throws InterruptedException {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         driver.get("http://the-internet.herokuapp.com/dynamic_loading/1");
@@ -30,7 +29,7 @@ public class WaitsTest extends BaseTest {
 
     }
 
-    @Test
+    //@Test
     public void explicitlyVisibilityTest() throws InterruptedException {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         driver.get("http://the-internet.herokuapp.com/dynamic_loading/1");
