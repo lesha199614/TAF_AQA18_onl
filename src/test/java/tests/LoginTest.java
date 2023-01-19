@@ -2,9 +2,12 @@ package tests;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
+import io.qameta.allure.*;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 import pages.DashBoardPage;
 import pages.LoginPage;
+import steps.UserStep;
 
 public class LoginTest extends BaseTest {
 
@@ -17,16 +20,24 @@ public class LoginTest extends BaseTest {
 
         Assert.assertTrue(new DashBoardPage(driver).isPageOpened());
     }
-    //@Test
-    public void loginSuccessfulTest() {
 
-        Assert.assertTrue(userStep.loginSuccessful(ReadProperties.username(),ReadProperties.password())
+    @Test(description = "Description")
+    @Issue("AQA-12")
+    @TmsLink("TC-001")
+    @Description("Description1")
+    @Link("https://onliner.by")
+    @Link(name = "catalog", type = "mylink", url= "https://onliner.by")
+    @Severity(SeverityLevel.CRITICAL)
+    public void loginSuccessfulTest() {
+        userStep = new UserStep(driver);
+        Assert.assertTrue(userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password())
                 .isPageOpened());
     }
+
     //@Test
     public void loginIncorrectTest() {
-        Assert.assertEquals(userStep.loginIncorrect(ReadProperties.username(),"sdfadaa")
-                .getErrorTextElement().getText(),
+        Assert.assertEquals(userStep.loginIncorrect(ReadProperties.username(), "sdfadaa")
+                        .getErrorTextElement().getText(),
                 "Email/Login or Password is incorrect. Please try again."
         );
     }
