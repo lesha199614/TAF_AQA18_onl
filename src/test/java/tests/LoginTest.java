@@ -6,6 +6,7 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Issue;
 import io.qameta.allure.Link;
 import io.qameta.allure.TmsLink;
+import models.User;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DashboardPage;
@@ -13,12 +14,12 @@ import pages.LoginPage;
 
 public class LoginTest extends BaseTest {
 
-    @Test (description = "Description")
+    @Test(description = "Description")
     @Issue("AQA18-11")
     @TmsLink("TC-001")
-    @Description ("Description1")
-    @Link ("https://onliner.by")
-    @Link (name = "catalog", type = "myLink", url = "https://onliner.by")
+    @Description("Description1")
+    @Link("https://onliner.by")
+    @Link(name = "catalog", type = "myLink", url = "https://onliner.by")
     public void loginTest() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.getEmailInput().sendKeys(ReadProperties.username());
@@ -30,9 +31,13 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void loginSuccessfulTest() {
+        User user = new User.Builder()
+                .withEmail(ReadProperties.username())
+                .withPassword(ReadProperties.password())
+                .build();
         Assert.assertTrue(
-                userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password())
-                .isPageOpened()
+                userStep.loginSuccessful(user)
+                        .isPageOpened()
         );
     }
 
@@ -40,7 +45,7 @@ public class LoginTest extends BaseTest {
     public void loginIncorrectTest() {
         Assert.assertEquals(
                 userStep.loginIncorrect(ReadProperties.username(), "sdfsdfsdf")
-                .getErrorTextElement().getText(),
+                        .getErrorTextElement().getText(),
                 "Email/Login or Password is incorrect. Please try again."
         );
     }
