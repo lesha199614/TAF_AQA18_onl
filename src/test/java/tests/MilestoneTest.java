@@ -2,10 +2,11 @@ package tests;
 
 import models.Milestone;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class MilestoneTest {
 
-    //@Test
+    @Test
     public void lombokTest1() {
         Milestone milestone1 = new Milestone();
         milestone1.setId(1);
