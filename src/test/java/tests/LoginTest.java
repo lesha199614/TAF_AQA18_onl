@@ -3,10 +3,14 @@ package tests;
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import io.qameta.allure.*;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DashBoardPage;
 import pages.LoginPage;
+import pages.project.AddProjectPage;
+import steps.NavigationSteps;
+import steps.ProjectSteps;
 import steps.UserStep;
 
 public class LoginTest extends BaseTest {
@@ -26,7 +30,7 @@ public class LoginTest extends BaseTest {
     @TmsLink("TC-001")
     @Description("Description1")
     @Link("https://onliner.by")
-    @Link(name = "catalog", type = "mylink", url= "https://onliner.by")
+    @Link(name = "catalog", type = "mylink", url = "https://onliner.by")
     @Severity(SeverityLevel.CRITICAL)
     public void loginSuccessfulTest() {
         userStep = new UserStep(driver);
@@ -41,4 +45,25 @@ public class LoginTest extends BaseTest {
                 "Email/Login or Password is incorrect. Please try again."
         );
     }
+
+    @Test
+    public void addProjectTest() {
+        userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
+        ProjectSteps projectSteps = new ProjectSteps(driver);
+        projectSteps.addProject("WP_01");
+
+        Assert.assertEquals(driver.findElement(By.className("page_title")).getText(),
+                "WP_01");
+    }
+
+    @Test
+    public void radioButtonTest() {
+        userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
+        AddProjectPage page = new NavigationSteps(driver).navigateToAddProjectPage();
+        page.getType().selectByIndex(1);
+        page.getType().selectByValue("1");
+        page.getType().selectByText("Use multiple test suites to manage cases");
+
+    }
+
 }
