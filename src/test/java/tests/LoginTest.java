@@ -3,6 +3,7 @@ package tests;
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import elements.Checkbox;
+import elements.DropDown;
 import io.qameta.allure.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -81,6 +82,15 @@ public class LoginTest extends BaseTest {
         System.out.println(checkbox1.getAttributeName());
         checkbox1.click();
         System.out.println(checkbox1.isEnabled());
+    }
+    @Test
+    public void dropdown() throws InterruptedException {
+        userStep.loginSuccessful(ReadProperties.username(),ReadProperties.password());
+        driver.get("https://aqa18onl03.testrail.io/index.php?/cases/add/1");
+        DropDown dropDown = new DropDown(driver, By.id("template_id_chzn"));
+
+        dropDown.click();
+        Thread.sleep(2000);
     }
 
 }

@@ -15,6 +15,7 @@ public class Checkbox {
         this.uiElement = new UIElement(driver, webElement);
     }
 
+
     public Checkbox(WebDriver driver, String AttributeNameValue) {
         this.uiElement = new UIElement(driver, By.xpath("//strong[text()='" + AttributeNameValue + "']/parent::*/*[@type='checkbox']"));
     }
