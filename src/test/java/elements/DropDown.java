@@ -9,28 +9,52 @@ import java.util.List;
 
 public class DropDown {
 
-    //private UIElement uiElement;
+    private UIElement uiElement;
     private List<UIElement> uiElementList;
     private List<String> valueList;
     private List<String> textList;
 
     public DropDown(WebDriver driver, String attributeNameValue) {
-        //this.uiElement = new UIElement(driver, By.xpath("//label[contains(text(),'" + attributeNameValue + "')]/parent::*//li"));
+        uiElement = new UIElement(driver, By.xpath("//label[contains(text(),'" + attributeNameValue + "')]/parent::*"));
         uiElementList = new ArrayList<>();
         valueList = new ArrayList<>();
         textList = new ArrayList<>();
-        for (WebElement webElement : driver.findElements(By.xpath("//label[contains(text(),'" + attributeNameValue + "')]/parent::*//li"))) {
-            UIElement element = new UIElement(driver, webElement);
-            uiElementList.add(element);
-            valueList.add(element.getAttribute("id"));
-            textList.add(element.getText().trim());
-            System.out.println(element.getAttribute("id"));
-            System.out.println(element.);
+        for (WebElement webElement : driver.findElements(By.xpath("//label[contains(text(),'" + attributeNameValue + "')]/parent::*//option"))) {
+            UIElement option = new UIElement(driver, webElement);
+            uiElementList.add(option);
+            valueList.add(option.getAttribute("value").trim());
+            textList.add(option.getAttribute("text").trim());
+            System.out.println(option.getAttribute("value"));
+            System.out.println(option.getAttribute("text"));
         }
     }
-    //label[text()='Template            ']/parent::div
-    //label[text()='" + attributeNameValue + "']/parent::*//li
-    //'Section            '
 
+    public boolean isSelectioOpen() {
+        try {
+            uiElement.findUIElement(By.xpath("./a"));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public void openSelection() {
+        uiElement.findElement(By.xpath("./div")).click();
+    }
+
+    public void selectByIndex(int index) {
+        openSelection();
+        uiElement.findUIElements(By.xpath(".//li")).get(index).click();
+    }
+
+    public void selectByValue(String value) {
+        openSelection();
+        uiElement.findUIElements(By.xpath(".//li")).get(valueList.indexOf(value)).click();
+    }
+
+    public void selectByText(String text) {
+        openSelection();
+        uiElement.findUIElements(By.xpath(".//li")).get(textList.indexOf(text)).click();
+    }
 
 }

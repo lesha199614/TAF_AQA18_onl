@@ -88,8 +88,15 @@ public class LoginTest extends BaseTest {
         userStep.loginSuccessful(ReadProperties.username(),ReadProperties.password());
         driver.get("https://aqa18onl03.testrail.io/index.php?/cases/add/1");
         DropDown dropDown = new DropDown(driver, "Template");
-
+        dropDown.selectByIndex(1);
         Thread.sleep(2000);
+        dropDown = new DropDown(driver, "Template");
+        dropDown.selectByValue("3");
+        Thread.sleep(2000);
+        dropDown = new DropDown(driver, "Template");
+        dropDown.selectByText("Test Case (Text)");
+        Thread.sleep(2000);
+
     }
 
 }
