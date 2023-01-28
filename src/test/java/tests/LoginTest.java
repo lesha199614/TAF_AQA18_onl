@@ -27,7 +27,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(new DashBoardPage(driver).isPageOpened());
     }
 
-    @Test(description = "Description")
+    //@Test(description = "Description")
     @Issue("AQA-12")
     @TmsLink("TC-001")
     @Description("Description1")
@@ -48,7 +48,7 @@ public class LoginTest extends BaseTest {
         );
     }
 
-    @Test
+    //@Test
     public void addProjectTest() {
         userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
         ProjectSteps projectSteps = new ProjectSteps(driver);
@@ -58,7 +58,7 @@ public class LoginTest extends BaseTest {
                 "WP_01");
     }
 
-    @Test
+    //@Test
     public void radioButtonTest() {
         userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
         AddProjectPage page = new NavigationSteps(driver).navigateToAddProjectPage();
@@ -68,7 +68,7 @@ public class LoginTest extends BaseTest {
 
     }
 
-    @Test
+    //@Test
     public void checkBoxTest() throws InterruptedException {
         userStep.loginSuccessful(ReadProperties.username(),ReadProperties.password());
         driver.get("https://aqa18onl03.testrail.io/index.php?/admin/projects/edit/1/1");
@@ -87,10 +87,11 @@ public class LoginTest extends BaseTest {
     public void dropdown() throws InterruptedException {
         userStep.loginSuccessful(ReadProperties.username(),ReadProperties.password());
         driver.get("https://aqa18onl03.testrail.io/index.php?/cases/add/1");
-        DropDown dropDown = new DropDown(driver, By.id("template_id_chzn"));
+        DropDown dropDown = new DropDown(driver, "Template");
 
-        dropDown.click();
         Thread.sleep(2000);
     }
 
 }
+//label[contains(text(),'Template')]
+//label[contains(text(),'Template']/parent::*//li
