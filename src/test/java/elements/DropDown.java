@@ -24,21 +24,18 @@ public class DropDown {
             uiElementList.add(option);
             valueList.add(option.getAttribute("value").trim());
             textList.add(option.getAttribute("text").trim());
-            System.out.println(option.getAttribute("value"));
-            System.out.println(option.getAttribute("text"));
         }
     }
 
-    public boolean isSelectioOpen() {
-        try {
-            uiElement.findUIElement(By.xpath("./a"));
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
+
+    public String SettledValueOfDropDown() {
+        return uiElement.findUIElement(By.xpath(".//a/span")).getText().trim();
     }
 
     public void openSelection() {
+        if (isDropDownOpen()) {
+            return;
+        }
         uiElement.findElement(By.xpath("./div")).click();
     }
 
@@ -57,4 +54,8 @@ public class DropDown {
         uiElement.findUIElements(By.xpath(".//li")).get(textList.indexOf(text)).click();
     }
 
+    private boolean isDropDownOpen() {
+        return !uiElement.findUIElement(By.xpath(".//div[@class='chzn-drop']"))
+                .getAttribute("style").contains("display: none");
+    }
 }

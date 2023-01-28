@@ -68,7 +68,7 @@ public class LoginTest extends BaseTest {
 
     }
 
-    //@Test
+    @Test
     public void checkBoxTest() throws InterruptedException {
         userStep.loginSuccessful(ReadProperties.username(),ReadProperties.password());
         driver.get("https://aqa18onl03.testrail.io/index.php?/admin/projects/edit/1/1");
@@ -88,17 +88,17 @@ public class LoginTest extends BaseTest {
         userStep.loginSuccessful(ReadProperties.username(),ReadProperties.password());
         driver.get("https://aqa18onl03.testrail.io/index.php?/cases/add/1");
         DropDown dropDown = new DropDown(driver, "Template");
+        System.out.println(dropDown.SettledValueOfDropDown());
+        dropDown.openSelection();
         dropDown.selectByIndex(1);
+        System.out.println(dropDown.SettledValueOfDropDown());
         Thread.sleep(2000);
-        dropDown = new DropDown(driver, "Template");
-        dropDown.selectByValue("3");
-        Thread.sleep(2000);
-        dropDown = new DropDown(driver, "Template");
+        dropDown = new DropDown(driver,"Template");
         dropDown.selectByText("Test Case (Text)");
+        System.out.println(dropDown.SettledValueOfDropDown());
         Thread.sleep(2000);
+        dropDown = new DropDown(driver,"Template");
+        dropDown.selectByText("Exploratory Session");
 
     }
-
 }
-//label[contains(text(),'Template')]
-//label[contains(text(),'Template']/parent::*//li

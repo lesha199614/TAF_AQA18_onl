@@ -44,11 +44,12 @@ public class WaitsService {
         return fluent.until(driver -> driver.findElement(by));
     }
 
-    public List<WebElement> waitForAllVisibleElementsLocatedBy (By locator) {
+    public List<WebElement> waitForAllVisibleElementsLocatedBy(By locator) {
         return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
     }
 
-    public WebElement waitForExists (By locator) {
+    public WebElement waitForExists(By locator) {
         return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
+
 }

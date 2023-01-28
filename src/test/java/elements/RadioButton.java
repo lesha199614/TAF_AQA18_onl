@@ -26,14 +26,15 @@ public class RadioButton {
         }
     }
 
-    public void selectByIndex (int index) {
+    public void selectByIndex(int index) {
         uiElementList.get(index).click();
     }
 
-    public void selectByValue (String value) {
+    public void selectByValue(String value) {
         uiElementList.get(valueList.indexOf(value)).click();
     }
-    public void selectByText (String text) {
+
+    public void selectByText(String text) {
         uiElementList.get(textList.indexOf(text)).click();
     }
 }

@@ -25,11 +25,11 @@ public class Checkbox {
     }
 
     public boolean isSelected() {
-       return uiElement.isSelected();
+        return uiElement.isSelected();
     }
 
-    public String getAttributeName () {
-       return uiElement.findElement(By.xpath("//*[@type='checkbox']/parent::*/strong")).getText().trim();
+    public String getAttributeName() {
+        return uiElement.findElement(By.xpath("//*[@type='checkbox']/parent::*/strong")).getText().trim();
     }
 
     public boolean isEnabled() {
