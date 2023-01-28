@@ -16,21 +16,23 @@ public class Checkbox {
     }
 
     public Checkbox(WebDriver driver, String AttributeNameValue) {
-
+        this.uiElement = new UIElement(driver, By.xpath("//strong[text()='" + AttributeNameValue + "']/parent::*/*[@type='checkbox']"));
     }
 
+    public void click() {
+        uiElement.click();
+    }
 
-//    public RadioButton(WebDriver driver, String attributeNameValue) {
-//        uiElementList = new ArrayList<>();
-//        valueList = new ArrayList<>();
-//        textList = new ArrayList<>();
-//
-//        for (WebElement webElement : driver.findElements(By.name(attributeNameValue))) {
-//            UIElement element = new UIElement(driver, webElement);
-//            uiElementList.add(element);
-//            valueList.add(element.getAttribute("value"));
-//            textList.add(element.findUIElement(By.xpath("parent::*/strong")).getText().trim());
-//        }
-//    }
+    public boolean isSelected() {
+       return uiElement.isSelected();
+    }
+
+    public String getAttributeName () {
+       return uiElement.findElement(By.xpath("//*[@type='checkbox']/parent::*/strong")).getText().trim();
+    }
+
+    public boolean isEnabled() {
+        return uiElement.isEnabled();
+    }
 
 }

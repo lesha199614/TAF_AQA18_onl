@@ -2,6 +2,7 @@ package tests;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
+import elements.Checkbox;
 import io.qameta.allure.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -64,6 +65,22 @@ public class LoginTest extends BaseTest {
         page.getType().selectByValue("1");
         page.getType().selectByText("Use multiple test suites to manage cases");
 
+    }
+
+    @Test
+    public void checkBoxTest() throws InterruptedException {
+        userStep.loginSuccessful(ReadProperties.username(),ReadProperties.password());
+        driver.get("https://aqa18onl03.testrail.io/index.php?/admin/projects/edit/1/1");
+        Checkbox checkbox = new Checkbox(driver, "Show the announcement on the overview page");
+        System.out.println(checkbox.getAttributeName());
+        System.out.println(checkbox.isSelected());
+        checkbox.click();
+        System.out.println(checkbox.isSelected());
+        Thread.sleep(2000);
+        Checkbox checkbox1 = new Checkbox(driver, By.name("is_completed"));
+        System.out.println(checkbox1.getAttributeName());
+        checkbox1.click();
+        System.out.println(checkbox1.isEnabled());
     }
 
 }
