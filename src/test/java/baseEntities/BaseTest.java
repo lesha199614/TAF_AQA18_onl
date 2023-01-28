@@ -1,38 +1,31 @@
 package baseEntities;
 
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import configuration.ReadProperties;
-import factory.BrowserFactory;
-import org.openqa.selenium.WebDriver;
-import org.testng.ITestContext;
-import org.testng.ITestResult;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import services.WaitsService;
-//import steps.ProjectSteps;
-import steps.UserStep;
+import org.testng.annotations.BeforeSuite;
+
+import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class BaseTest {
-    protected WebDriver driver;
-    protected UserStep userStep;
-    //protected ProjectSteps projectSteps;
-    protected WaitsService waitsService;
 
-    @BeforeMethod
-    public void setUp(ITestContext iTestContext) {
-        driver = new BrowserFactory().getDriver();
-        waitsService = new WaitsService(driver);
-        driver.get(ReadProperties.getUrl());
+    @BeforeSuite
+    public void setUp() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        // Solution 1
-        iTestContext.setAttribute("driver", driver);
-        // Solution 1 - Finish
-
-        userStep = new UserStep(driver);
-       // projectSteps = new ProjectSteps(driver);
+        Configuration.browser = ReadProperties.browserName();
+        Configuration.baseUrl = ReadProperties.getUrl();
+        Configuration.timeout = 15000;
+        Configuration.fastSetValue = true;
+//        Configuration.assertionMode = AssertionMode.SOFT;
+//        Configuration.headless =true;
+//        Configuration.reportsFolder = "target/";
     }
 
     @AfterMethod
-    public void tearDown(ITestResult testResult) {
-        driver.quit();
+    public void tearDown() {
+        closeWebDriver();
     }
 }
