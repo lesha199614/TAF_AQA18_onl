@@ -20,8 +20,16 @@ public class Checkbox {
         this.uiElement = new UIElement(driver, By.xpath("//strong[text()='" + AttributeNameValue + "']/parent::*/*[@type='checkbox']"));
     }
 
-    public void click() {
-        uiElement.click();
+
+    public void setFlag() {
+        if(!isSelected()){
+            uiElement.click();
+        }
+    }
+    public void removeFlag() {
+        if(isSelected()){
+            uiElement.click();
+        }
     }
 
     public boolean isSelected() {

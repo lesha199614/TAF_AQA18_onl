@@ -75,13 +75,13 @@ public class LoginTest extends BaseTest {
         Checkbox checkbox = new Checkbox(driver, "Show the announcement on the overview page");
         System.out.println(checkbox.getAttributeName());
         System.out.println(checkbox.isSelected());
-        checkbox.click();
+        checkbox.setFlag();
         System.out.println(checkbox.isSelected());
         Thread.sleep(2000);
-        Checkbox checkbox1 = new Checkbox(driver, By.name("is_completed"));
-        System.out.println(checkbox1.getAttributeName());
-        checkbox1.click();
-        System.out.println(checkbox1.isEnabled());
+        checkbox.removeFlag();
+        System.out.println(checkbox.isSelected());
+        System.out.println(checkbox.isEnabled());
+        Thread.sleep(2000);
     }
     @Test
     public void dropdown() throws InterruptedException {

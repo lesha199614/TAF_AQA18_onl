@@ -33,10 +33,9 @@ public class DropDown {
     }
 
     public void openSelection() {
-        if (isDropDownOpen()) {
-            return;
+        if (!isDropDownOpen()) {
+            uiElement.findElement(By.xpath("./div")).click();
         }
-        uiElement.findElement(By.xpath("./div")).click();
     }
 
     public void selectByIndex(int index) {
