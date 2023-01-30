@@ -2,6 +2,7 @@ package tests;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
+import models.DeliveryUser;
 import org.testng.annotations.Test;
 
 public class HW_Tests extends BaseTest {
@@ -27,7 +28,16 @@ public class HW_Tests extends BaseTest {
                 .clickContinue()
                 .clickFinish()
                 .backToCatalog();
-
-
     }
+
+    @Test
+    public void valueOfObject() {
+        user = userStep.createUser();
+        DeliveryUser deliveryUser = userStep.createDeliveryUser();
+        userStep.loginSuccessful(user);
+        userStep.addFirstItemToCartFromCatalog();
+        navigationStep.openCartFromCatalog();
+        userStep.completeOrder(deliveryUser);
+    }
+
 }

@@ -2,13 +2,13 @@ package baseEntities;
 
 import configuration.ReadProperties;
 import factory.BrowserFactory;
+import models.User;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import services.WaitsService;
-//import steps.ProjectSteps;
 import steps.NavigationStep;
 import steps.UserStep;
 
@@ -17,6 +17,7 @@ public class BaseTest {
     protected UserStep userStep;
     protected NavigationStep navigationStep;
     protected WaitsService waitsService;
+    protected User user;
 
     @BeforeMethod
     public void setUp(ITestContext iTestContext) {
@@ -30,6 +31,8 @@ public class BaseTest {
 
         userStep = new UserStep(driver);
         navigationStep = new NavigationStep(driver);
+        user = new User();
+
     }
 
     @AfterMethod
