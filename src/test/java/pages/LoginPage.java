@@ -20,7 +20,7 @@ public class LoginPage extends BasePage {
     @FindBy(className = "error-text")
     public WebElement errorText;
 
-    // Блок иницализации страницы
+    // Блок инициализации страницы
     public LoginPage(WebDriver driver) {
         super(driver);
     }
