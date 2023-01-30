@@ -31,9 +31,7 @@ public class UserStep extends BaseStep {
 
     @Step
     public DashboardPage loginSuccessful(User user) {
-        login(user.getEmail(), user.getPassword());
-
-        return new DashboardPage(driver);
+        return loginSuccessful(user.getEmail(), user.getPassword());
     }
 
     public LoginPage loginIncorrect(String email, String psw) {
