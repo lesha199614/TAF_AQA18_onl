@@ -37,4 +37,28 @@ public class Cart extends BasePage {
     @FindBy(id = "complete-header")
     public WebElement completeOrder;
 
+    public Cart cartCheckOut(){
+        checkoutButton.click();
+        return this;
+    }
+
+    public Cart setShippingValues(String name, String surname, String zip) {
+        firstName.sendKeys(name);
+        lastName.sendKeys(surname);
+        postalCode.sendKeys(zip);
+        return this;
+    }
+
+    public Cart clickContinue (){
+        continueButton.click();
+        return this;
+    }
+    public Cart clickFinish (){
+        finishButton.click();
+        return this;
+    }
+    public Cart backToCatalog (){
+        backToCatalogButton.click();
+        return this;
+    }
 }
