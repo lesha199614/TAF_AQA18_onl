@@ -6,24 +6,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
-    // Блок описания локаторов для элементов
 
-    @FindBy(id = "name")
-    public WebElement emailInput;
+    @FindBy(id = "user-name")
+    public WebElement userName;
 
     @FindBy(id = "password")
-    public WebElement passwordInput;
+    public WebElement password;
 
-    @FindBy(id = "button_primary")
-    public WebElement logInButton;
+    @FindBy(id = "login-button")
+    public WebElement loginButton;
 
-    @FindBy(className = "error-text")
+    @FindBy(className = "error-button")
     public WebElement errorText;
 
-    // Блок инициализации страницы
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-
-
 }
