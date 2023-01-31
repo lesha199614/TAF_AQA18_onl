@@ -1,28 +1,43 @@
 package models;
 
 public class DeliveryUserBuilder {
-    private DeliveryUser newUser;
-    public DeliveryUserBuilder() {
+    private String firstName;
+    private String lastName;
+    private String postalCode;
 
-        newUser = new DeliveryUser();
+    public static class Builder {
+        private DeliveryUserBuilder newUser;
+
+        public Builder() {
+            newUser = new DeliveryUserBuilder();
+        }
+
+        public Builder withFirstName(String value) {
+            newUser.firstName = value;
+            return this;
+        }
+        public Builder withLastName(String value) {
+            newUser.lastName = value;
+            return this;
+        }
+        public Builder withPostalCode(String value) {
+            newUser.postalCode = value;
+            return this;
+        }
+        public DeliveryUserBuilder build(){
+            return newUser;
+        }
     }
 
-    public DeliveryUserBuilder withFirstName (String value) {
-        newUser.userName = value;
-        return this;
-    }
-    public DeliveryUserBuilder withLastName (String value) {
-        newUser.lastName = value;
-        return this;
-    }
-    public DeliveryUserBuilder withPostalCode (String value) {
-        newUser.postalCode = value;
-        return this;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public DeliveryUser build() {
-        return newUser;
+    public String getLastName() {
+        return lastName;
     }
 
+    public String getPostalCode() {
+        return postalCode;
+    }
 }
-
