@@ -44,7 +44,7 @@ public class UserStep extends BaseStep {
 
 
     public void addFirstItemToCartFromCatalog() {
-        catalogPage.addToCartFirstItem.click();
+        catalogPage.addToCart.get(0).click();
     }
 
     public void addFirstItemFromItemPage() {

@@ -22,7 +22,7 @@ public class HW_Tests extends BaseTest {
     @Test
     public void chain() {
         userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password())
-                .addToCartFirstItem.click();
+                .addToCart.get(0).click();
         navigationStep.openCartFromCatalog()
                 .cartCheckOut()
                 .setShippingValues("Alex", "Vayeh", "1234")

@@ -22,7 +22,8 @@ public class NavigationStep extends BaseStep {
     }
 
     public FirstItemPage openFirstItemPage() {
-        catalogPage.firstItem.click();
+        catalogPage.items.get(0).click();
+
         return new FirstItemPage(driver);
     }
 
