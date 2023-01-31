@@ -42,4 +42,26 @@ public class User {
     public int hashCode() {
         return Objects.hash(userName, password);
     }
+
+    public static class Builder {
+        private User newUser;
+
+        public Builder() {
+            newUser = new User();
+        }
+
+        public Builder withFirstName(String value) {
+            newUser.userName = value;
+            return this;
+        }
+
+        public Builder withPassword(String value) {
+            newUser.password = value;
+            return this;
+        }
+
+        public User build() {
+            return newUser;
+        }
+    }
 }

@@ -10,19 +10,19 @@ public class FirstItemPage extends BasePage {
         super(driver);
     }
 
-    @FindBy (className = "inventory_details_name")
+    @FindBy(className = "inventory_details_name")
     public WebElement itemName;
 
-    @FindBy (className = "inventory_details_price")
+    @FindBy(className = "inventory_details_price")
     public WebElement itemPrice;
 
-    @FindBy (id = "add-to-cart-sauce-labs-backpack")
+    @FindBy(id = "add-to-cart-sauce-labs-backpack")
     public WebElement addToCartButton;
 
-    @FindBy (id = "shopping_cart_container")
+    @FindBy(id = "shopping_cart_container")
     public WebElement cart;
 
-    @FindBy (id = "back-to-products")
+    @FindBy(id = "back-to-products")
     public WebElement BackToCatalogButton;
 
 }

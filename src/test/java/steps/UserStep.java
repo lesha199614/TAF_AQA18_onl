@@ -28,14 +28,14 @@ public class UserStep extends BaseStep {
 
 
     public CatalogPage loginSuccessful(String email, String password) {
-        return login(email,password);
+        return login(email, password);
     }
 
     public CatalogPage loginSuccessful(User user) {
-        return login(user.getUserName(),user.getPassword());
+        return login(user.getUserName(), user.getPassword());
     }
 
-    public CatalogPage login (String email, String password) {
+    public CatalogPage login(String email, String password) {
         loginPage.userName.sendKeys(email);
         loginPage.password.sendKeys(password);
         loginPage.loginButton.click();
@@ -51,7 +51,7 @@ public class UserStep extends BaseStep {
         firstItemPage.addToCartButton.click();
     }
 
-    public void completeOrder(String firstName, String lastName, String postalCode){
+    public void completeOrder(String firstName, String lastName, String postalCode) {
         cart.checkoutButton.click();
         setShippingValues(firstName, lastName, postalCode);
         cart.continueButton.click();
@@ -65,7 +65,7 @@ public class UserStep extends BaseStep {
     }
 
 
-    public User createUser(){
+    public User createUser() {
         User user = new User();
         user.setUserName(ReadProperties.username());
         user.setPassword(ReadProperties.password());
@@ -80,13 +80,14 @@ public class UserStep extends BaseStep {
         System.out.println(deliveryUser.toString());
         return deliveryUser;
     }
+
     public void setShippingValues(DeliveryUser deliveryUser) {
         cart.firstName.sendKeys(deliveryUser.getUserName());
         cart.lastName.sendKeys(deliveryUser.getLastName());
         cart.postalCode.sendKeys(deliveryUser.getPostalCode());
     }
 
-    public void completeOrder(DeliveryUser deliveryUser){
+    public void completeOrder(DeliveryUser deliveryUser) {
         cart.checkoutButton.click();
         setShippingValues(deliveryUser);
         cart.continueButton.click();

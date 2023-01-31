@@ -10,34 +10,34 @@ public class Cart extends BasePage {
         super(driver);
     }
 
-    @FindBy (className = "title")
+    @FindBy(className = "title")
     public WebElement title;
 
-    @FindBy (id = "checkout")
+    @FindBy(id = "checkout")
     public WebElement checkoutButton;
 
-    @FindBy (id = "first-name")
+    @FindBy(id = "first-name")
     public WebElement firstName;
 
-    @FindBy (id = "last-name")
+    @FindBy(id = "last-name")
     public WebElement lastName;
 
-    @FindBy (id = "postal-code")
+    @FindBy(id = "postal-code")
     public WebElement postalCode;
 
-    @FindBy (id = "finish")
+    @FindBy(id = "finish")
     public WebElement finishButton;
 
-    @FindBy (id = "continue")
+    @FindBy(id = "continue")
     public WebElement continueButton;
 
-    @FindBy (id = "back-to-products")
+    @FindBy(id = "back-to-products")
     public WebElement backToCatalogButton;
 
     @FindBy(id = "complete-header")
     public WebElement completeOrder;
 
-    public Cart cartCheckOut(){
+    public Cart cartCheckOut() {
         checkoutButton.click();
         return this;
     }
@@ -49,15 +49,17 @@ public class Cart extends BasePage {
         return this;
     }
 
-    public Cart clickContinue (){
+    public Cart clickContinue() {
         continueButton.click();
         return this;
     }
-    public Cart clickFinish (){
+
+    public Cart clickFinish() {
         finishButton.click();
         return this;
     }
-    public Cart backToCatalog (){
+
+    public Cart backToCatalog() {
         backToCatalogButton.click();
         return this;
     }

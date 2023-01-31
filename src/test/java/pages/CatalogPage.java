@@ -11,16 +11,16 @@ public class CatalogPage extends BasePage {
         super(driver);
     }
 
-    @FindBy (className = "title")
+    @FindBy(className = "title")
     public WebElement title;
 
-    @FindBy (id = "item_4_title_link")
+    @FindBy(id = "item_4_title_link")
     public WebElement firstItem;
 
-    @FindBy (id = "add-to-cart-sauce-labs-backpack")
+    @FindBy(id = "add-to-cart-sauce-labs-backpack")
     public WebElement addToCartFirstItem;
 
-    @FindBy (id = "shopping_cart_container")
+    @FindBy(id = "shopping_cart_container")
     public WebElement cart;
 
 }

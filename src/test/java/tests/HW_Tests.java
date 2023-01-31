@@ -3,7 +3,7 @@ package tests;
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import models.DeliveryUser;
-import models.DeliveryUserBuilder;
+import models.User;
 import org.testng.annotations.Test;
 
 public class HW_Tests extends BaseTest {
@@ -43,9 +43,15 @@ public class HW_Tests extends BaseTest {
 
     @Test
     public void builder() {
-        user = userStep.createUser();
-        DeliveryUserBuilder deliveryUserBuilder = builder();
-        DeliveryUser deliveryUser = userStep.createDeliveryUser();
+        User user = new User.Builder()
+                .withFirstName(ReadProperties.username())
+                .withPassword(ReadProperties.password())
+                .build();
+        DeliveryUser deliveryUser = new DeliveryUser.Builder()
+                .withFirstName("Alex")
+                .withLastName("Vayteh")
+                .withPostalCode("1234")
+                .build();
         userStep.loginSuccessful(user);
         userStep.addFirstItemToCartFromCatalog();
         navigationStep.openCartFromCatalog();

@@ -20,6 +20,7 @@ public class NavigationStep extends BaseStep {
         catalogPage = new CatalogPage(driver);
         cart = new Cart(driver);
     }
+
     public FirstItemPage openFirstItemPage() {
         catalogPage.firstItem.click();
         return new FirstItemPage(driver);
@@ -29,6 +30,7 @@ public class NavigationStep extends BaseStep {
         firstItemPage.BackToCatalogButton.click();
         return new CatalogPage(driver);
     }
+
     public Cart openCartFromCatalog() {
         catalogPage.cart.click();
         return new Cart(driver);
