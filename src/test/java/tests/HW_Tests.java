@@ -3,13 +3,14 @@ package tests;
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import models.DeliveryUser;
+import models.DeliveryUserBuilder;
 import org.testng.annotations.Test;
 
 public class HW_Tests extends BaseTest {
 
 
     @Test
-    public void login(){
+    public void login() {
         userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
         navigationStep.openFirstItemPage();
         userStep.addFirstItemFromItemPage();
@@ -19,7 +20,7 @@ public class HW_Tests extends BaseTest {
     }
 
     @Test
-    public void chain(){
+    public void chain() {
         userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password())
                 .addToCartFirstItem.click();
         navigationStep.openCartFromCatalog()
@@ -33,6 +34,17 @@ public class HW_Tests extends BaseTest {
     @Test
     public void valueOfObject() {
         user = userStep.createUser();
+        DeliveryUser deliveryUser = userStep.createDeliveryUser();
+        userStep.loginSuccessful(user);
+        userStep.addFirstItemToCartFromCatalog();
+        navigationStep.openCartFromCatalog();
+        userStep.completeOrder(deliveryUser);
+    }
+
+    @Test
+    public void builder() {
+        user = userStep.createUser();
+        DeliveryUserBuilder deliveryUserBuilder = builder();
         DeliveryUser deliveryUser = userStep.createDeliveryUser();
         userStep.loginSuccessful(user);
         userStep.addFirstItemToCartFromCatalog();
