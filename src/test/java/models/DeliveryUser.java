@@ -3,9 +3,9 @@ package models;
 import java.util.Objects;
 
 public class DeliveryUser {
-    private String userName;
-    private String lastName;
-    private String postalCode;
+    public String userName;
+    public String lastName;
+    public String postalCode;
 
     public String getUserName() {
         return userName;
