@@ -51,11 +51,12 @@ public class UserStep extends BaseStep {
         firstItemPage.addToCartButton.click();
     }
 
-    public void completeOrder(String firstName, String lastName, String postalCode) {
+    public Cart completeOrder(String firstName, String lastName, String postalCode) {
         cart.checkoutButton.click();
         setShippingValues(firstName, lastName, postalCode);
         cart.continueButton.click();
         cart.finishButton.click();
+        return cart;
     }
 
     public void setShippingValues(String firstName, String lastName, String postalCode) {
@@ -87,10 +88,11 @@ public class UserStep extends BaseStep {
         cart.postalCode.sendKeys(deliveryUser.getPostalCode());
     }
 
-    public void completeOrder(DeliveryUser deliveryUser) {
+    public Cart completeOrder(DeliveryUser deliveryUser) {
         cart.checkoutButton.click();
         setShippingValues(deliveryUser);
         cart.continueButton.click();
         cart.finishButton.click();
+        return cart;
     }
 }

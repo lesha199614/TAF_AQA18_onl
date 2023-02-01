@@ -4,6 +4,7 @@ import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import models.DeliveryUser;
 import models.User;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class HW_Tests extends BaseTest {
@@ -16,19 +17,24 @@ public class HW_Tests extends BaseTest {
         userStep.addFirstItemFromItemPage();
         navigationStep.returnToCatalogFromItemPage();
         navigationStep.openCartFromCatalog();
-        userStep.completeOrder("Alex", "Vayteh", "1243");
+        Assert.assertEquals(userStep.completeOrder("Alex", "Vayteh", "1243").title.getText(), "CHECKOUT: COMPLETE!");
     }
 
     @Test
     public void chain() {
         userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password())
-                .addToCart.get(0).click();
-        navigationStep.openCartFromCatalog()
-                .cartCheckOut()
-                .setShippingValues("Alex", "Vayeh", "1234")
-                .clickContinue()
-                .clickFinish()
-                .backToCatalog();
+                .addToCart
+                .get(0)
+                .click();
+        Assert.assertEquals(navigationStep.openCartFromCatalog()
+                        .cartCheckOut()
+                        .setShippingValues("Alex", "Vayeh", "1234")
+                        .clickContinue()
+                        .clickFinish()
+                        .backToCatalog()
+                        .title
+                        .getText()
+                , "PRODUCTS");
     }
 
     @Test
@@ -38,7 +44,7 @@ public class HW_Tests extends BaseTest {
         userStep.loginSuccessful(user);
         userStep.addFirstItemToCartFromCatalog();
         navigationStep.openCartFromCatalog();
-        userStep.completeOrder(deliveryUser);
+        Assert.assertEquals(userStep.completeOrder(deliveryUser).title.getText(), "CHECKOUT: COMPLETE!");
     }
 
     @Test
@@ -55,7 +61,7 @@ public class HW_Tests extends BaseTest {
         userStep.loginSuccessful(user);
         userStep.addFirstItemToCartFromCatalog();
         navigationStep.openCartFromCatalog();
-        userStep.completeOrder(deliveryUser);
+        Assert.assertEquals(userStep.completeOrder(deliveryUser).title.getText(), "CHECKOUT: COMPLETE!");
     }
 
 }

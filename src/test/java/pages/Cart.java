@@ -59,8 +59,8 @@ public class Cart extends BasePage {
         return this;
     }
 
-    public Cart backToCatalog() {
+    public CatalogPage backToCatalog() {
         backToCatalogButton.click();
-        return this;
+        return new CatalogPage(driver);
     }
 }
