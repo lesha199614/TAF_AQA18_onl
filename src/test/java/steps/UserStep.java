@@ -67,14 +67,15 @@ public class UserStep extends BaseStep {
 
 
     public User createUser() {
-        User user = new User();
-        user.setUserName(ReadProperties.username());
-        user.setPassword(ReadProperties.password());
+        User user = User.builder()
+                .userName(ReadProperties.username())
+                .password(ReadProperties.password())
+                .build();
         return user;
     }
 
     public DeliveryUser createDeliveryUser() {
-        DeliveryUser deliveryUser = new DeliveryUser();
+        DeliveryUser deliveryUser = DeliveryUser.builder().build();
         deliveryUser.setUserName(Faker.instance().bothify("?????"));
         deliveryUser.setLastName(Faker.instance().bothify("??????"));
         deliveryUser.setPostalCode(Faker.instance().numerify("#####"));

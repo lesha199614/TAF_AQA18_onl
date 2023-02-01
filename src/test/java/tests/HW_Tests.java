@@ -39,7 +39,7 @@ public class HW_Tests extends BaseTest {
 
     @Test
     public void valueOfObject() {
-        user = userStep.createUser();
+        User user = userStep.createUser();
         DeliveryUser deliveryUser = userStep.createDeliveryUser();
         userStep.loginSuccessful(user);
         userStep.addFirstItemToCartFromCatalog();
@@ -49,14 +49,14 @@ public class HW_Tests extends BaseTest {
 
     @Test
     public void builder() {
-        User user = new User.Builder()
-                .withFirstName(ReadProperties.username())
-                .withPassword(ReadProperties.password())
+        User user = User.builder()
+                .userName(ReadProperties.username())
+                .password(ReadProperties.password())
                 .build();
-        DeliveryUser deliveryUser = new DeliveryUser.Builder()
-                .withFirstName("Alex")
-                .withLastName("Vayteh")
-                .withPostalCode("1234")
+        DeliveryUser deliveryUser = DeliveryUser.builder()
+                .userName("Alex")
+                .lastName("Vayteh")
+                .postalCode("1234")
                 .build();
         userStep.loginSuccessful(user);
         userStep.addFirstItemToCartFromCatalog();

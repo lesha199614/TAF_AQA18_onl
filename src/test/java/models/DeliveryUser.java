@@ -1,82 +1,18 @@
 package models;
 
-import java.util.Objects;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
+@Builder
+@Data
+@ToString
+@EqualsAndHashCode
 public class DeliveryUser {
     public String userName;
     public String lastName;
     public String postalCode;
 
-    public String getUserName() {
-        return userName;
-    }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    @Override
-    public String toString() {
-        return "DeliveryUser{" +
-                "userName='" + userName + '\'' +
-                ", password='" + lastName + '\'' +
-                ", postalCode='" + postalCode + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        DeliveryUser that = (DeliveryUser) o;
-        return Objects.equals(userName, that.userName) && Objects.equals(lastName, that.lastName) && Objects.equals(postalCode, that.postalCode);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(userName, lastName, postalCode);
-    }
-
-    public static class Builder {
-        private DeliveryUser newUser;
-
-        public Builder() {
-            newUser = new DeliveryUser();
-        }
-
-        public Builder withFirstName(String value) {
-            newUser.userName = value;
-            return this;
-        }
-
-        public Builder withLastName(String value) {
-            newUser.lastName = value;
-            return this;
-        }
-
-        public Builder withPostalCode(String value) {
-            newUser.postalCode = value;
-            return this;
-        }
-
-        public DeliveryUser build() {
-            return newUser;
-        }
-    }
 }
