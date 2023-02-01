@@ -3,7 +3,9 @@
     <Appenders>
         <Console name="ConsoleAppender" target="SYSTEM_OUT">
             <PatternLayout
-                    pattern="%d [%t] %-5level %logger{36} - %msg%n%throwable"/>
+                    pattern="%style{%date{DEFAULT}}{yellow}
+      %highlight{%-5level}{FATAL=bg_red, ERROR=red, WARN=yellow, INFO=green}
+      %message%n"/>
         </Console>
         <RollingFile name="File"
                      fileName="target/logfile.xml"
@@ -16,12 +18,11 @@
     </Appenders>
     <Loggers>
         <Logger name="File"
-                level="INFO" additivity="false">
+                level="Trace" additivity="false">
             <AppenderRef ref="File" />
         </Logger>
         <Root level="Info">
             <AppenderRef ref="ConsoleAppender"/>
-            <!--AppenderRef ref="File"/-->
         </Root>
     </Loggers>
 </Configuration>
