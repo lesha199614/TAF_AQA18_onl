@@ -22,17 +22,19 @@ public class NavigationStep extends BaseStep {
     }
 
     public FirstItemPage openFirstItemPage() {
+        logger.info("Open First Item");
         catalogPage.items.get(0).click();
-
         return new FirstItemPage(driver);
     }
 
     public CatalogPage returnToCatalogFromItemPage() {
+        logger.info("Open Catalog");
         firstItemPage.BackToCatalogButton.click();
         return new CatalogPage(driver);
     }
 
     public Cart openCartFromCatalog() {
+        logger.info("Open Cart");
         catalogPage.cart.click();
         return new Cart(driver);
     }

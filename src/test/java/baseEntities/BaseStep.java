@@ -1,10 +1,13 @@
 package baseEntities;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-//import steps.NavigationSteps;
+
 
 public class BaseStep {
     protected WebDriver driver;
+    protected Logger logger = LogManager.getLogger();
 
     public BaseStep(WebDriver driver) {
         this.driver = driver;
