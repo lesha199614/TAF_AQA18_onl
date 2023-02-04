@@ -1,5 +1,6 @@
 package stepDefs;
 
+import baseEntities.BaseCucumberTest;
 import configuration.ReadProperties;
 import factory.BrowserFactory;
 import io.cucumber.java.After;
@@ -7,16 +8,21 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pages.DashboardPage;
 import pages.LoginPage;
 import steps.UserStep;
 
-public class FirstStepDefs {
-    private WebDriver driver;
+public class FirstStepDefs extends BaseCucumberTest {
+    private BaseCucumberTest BaseCucumberTest;
     private LoginPage loginPage;
     private DashboardPage dashboardPage;
+
+    public FirstStepDefs(baseEntities.BaseCucumberTest baseCucumberTest, LoginPage loginPage, DashboardPage dashboardPage) {
+        BaseCucumberTest = baseCucumberTest;
+        this.loginPage = loginPage;
+        this.dashboardPage = dashboardPage;
+    }
 
     @Given("открыт браузер")
     public void startBrowser() {
@@ -63,5 +69,7 @@ public class FirstStepDefs {
     public void projectIdIs(int value) {
         Assert.assertEquals(value,123);
     }
+
+    
 
 }
