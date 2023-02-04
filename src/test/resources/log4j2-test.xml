@@ -21,7 +21,6 @@
         </Logger>
         <Root level="ERROR">
             <AppenderRef ref="ConsoleAppender"/>
-            <!--AppenderRef ref="File"/-->
         </Root>
     </Loggers>
 </Configuration>
