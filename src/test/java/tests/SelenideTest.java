@@ -6,9 +6,11 @@ import configuration.ReadProperties;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
+import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selectors.withText;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.isChrome;
 
 public class SelenideTest extends BaseTest {
 
@@ -56,6 +58,17 @@ public class SelenideTest extends BaseTest {
 //        loginButton.pressEnter();
 //        добавление текста к элементу (не заменяет)
 //        loginButton.append("tjkj");
+
+
+        $$(withText("All Projects"))
+                .shouldHave(texts("text1"
+                        , "text2"
+                        , "text3"))
+                .filterBy(text("Expected text"))
+                .excludeWith(hidden)
+                .findBy(visible);
+
+        isChrome();
 
     }
 
