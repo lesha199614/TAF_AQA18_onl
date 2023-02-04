@@ -40,20 +40,23 @@ public class SelenideTest extends BaseTest {
 //                .texts();
 //
 
+//        ==Contains
 //        $(withText("All Projects"))
 //                .shouldBe(visible)
 //                .shouldHave(text("All Projects"));
-//
+
 //        $(byTitle("All Projects"))
 //                .shouldBe(visible)
 //                .shouldHave(text("All Projects"));
-//
+
 //        $(byValue("All Projects"))
 //                .shouldBe(visible)
 //                .shouldHave(text("All Projects"));
 
 //        loginButton.pressEnter();
+//        добавление текста к элементу (не заменяет)
 //        loginButton.append("tjkj");
+
     }
 
     @Test
