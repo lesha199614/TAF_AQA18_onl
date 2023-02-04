@@ -20,7 +20,7 @@ public class BaseTest {
         Configuration.timeout = 15000;
         Configuration.fastSetValue = true;
 //        Configuration.assertionMode = AssertionMode.SOFT;
-//        Configuration.headless =true;
+//        Configuration.headless = true;
 //        Configuration.reportsFolder = "target/";
     }
 
