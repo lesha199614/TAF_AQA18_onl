@@ -6,6 +6,7 @@ import pages.ProductsPage;
 public class UserStep {
     private LoginPage loginPage;
 
+
     public void login(String email, String psw) {
         loginPage.getEmailInput().val(email);
         loginPage.getPassword().val(psw);
