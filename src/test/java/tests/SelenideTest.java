@@ -89,4 +89,10 @@ public class SelenideTest extends BaseTest {
                 .shouldBe(visible)
                 .shouldHave(text("All Projects"));
     }
+
+
+    @Test
+    public void sauceDemo() {
+        open("/");
+    }
 }

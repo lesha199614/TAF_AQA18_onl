@@ -6,13 +6,11 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
-    // Блок описания локаторов для эментов
-    private final By emailInputLocator = By.id("name");
+    private final By emailInputLocator = By.id("user-name");
     private final By passwordInputLocator = By.id("password");
-    private final By logInButtonLocator = By.id("button_primary");
-    private final By errorTextLocator = By.className("error-text");
+    private final By logInButtonLocator = By.id("login-button");
+    private final By errorTextLocator = By.className("error-button");
 
-    // Блок атомарных методов
     public SelenideElement getEmailInput() {
         return $(emailInputLocator);
     }
