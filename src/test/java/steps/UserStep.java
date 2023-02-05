@@ -1,5 +1,6 @@
 package steps;
 
+import com.github.javafaker.Faker;
 import pages.CartPage;
 import pages.CatalogPage;
 import pages.ItemPage;
@@ -25,7 +26,7 @@ public class UserStep {
         loginPage.getLogInButton().click();
     }
 
-    public CatalogPage loginSuccessful (String email, String psw) {
+    public CatalogPage loginSuccessful(String email, String psw) {
         login(email, psw);
 
         return new CatalogPage();
@@ -41,9 +42,13 @@ public class UserStep {
         itemPage.getAddItemToCartButton().click();
     }
 
-    public void setOrder() {
+    public CartPage setOrder() {
         cartPage.getCheckoutButton().click();
-        cartPage.getFirstName().val();
-
+        cartPage.getFirstName().val(Faker.instance().bothify("?????"));
+        cartPage.getLastName().val(Faker.instance().bothify("??????????"));
+        cartPage.getPostalCode().val(Faker.instance().bothify("######"));
+        cartPage.getContinueButton().click();
+        cartPage.getFinishButton().click();
+        return cartPage;
     }
 }

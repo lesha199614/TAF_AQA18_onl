@@ -16,8 +16,8 @@ public class CatalogPage {
 
     SelenideElement title = $(".title");
     List<SelenideElement> items = $$(".inventory_item_name");
-    List <SelenideElement> itemPrice = $$ (".inventory_item_price");
-    List <SelenideElement> addItemToCartButton = $$ (".btn_inventory");
+    List<SelenideElement> itemPrice = $$(".inventory_item_price");
+    List<SelenideElement> addItemToCartButton = $$(".btn_inventory");
     SelenideElement cartButton = $(".shopping_cart_link");
 
     public SelenideElement getTitle() {

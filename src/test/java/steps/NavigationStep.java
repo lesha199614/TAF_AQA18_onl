@@ -22,16 +22,28 @@ public class NavigationStep {
     }
 
 
-    public void openFirstItemFromCatalog () {
+    public ItemPage openFirstItemFromCatalog() {
         catalogPage.getItems().get(0).click();
+        return new ItemPage();
     }
 
-    public void openCatalogLink() {
+    public CatalogPage openCatalogLink() {
         open(catalogPage.getLink());
+        return new CatalogPage();
+    }
+
+    public CartPage openCartLink() {
+        open(cartPage.getLink());
+        return new CartPage();
     }
 
     public CartPage openCartFromItemPage() {
         itemPage.getCart().click();
+        return new CartPage();
+    }
+
+    public CartPage openCartFromCatalogPage() {
+        catalogPage.getCartButton().click();
         return new CartPage();
     }
 }
