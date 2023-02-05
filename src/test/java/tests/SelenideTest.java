@@ -95,6 +95,9 @@ public class SelenideTest extends BaseTest {
     public void sauceDemo() throws InterruptedException {
         open("/");
         userStep.loginSuccessful(ReadProperties.username(),ReadProperties.password());
-        Thread.sleep(5000);
+        navigationStep.openFirstItemFromCatalog();
+        userStep.addItemToCart();
+        navigationStep.openCartFromItemPage();
+        Thread.sleep(2000);
     }
 }

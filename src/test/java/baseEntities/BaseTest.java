@@ -6,6 +6,7 @@ import configuration.ReadProperties;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
+import steps.NavigationStep;
 import steps.UserStep;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
@@ -13,10 +14,12 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 public class BaseTest {
 
     public UserStep userStep;
+    public NavigationStep navigationStep;
 
     @BeforeSuite
     public void setUp() {
         userStep = new UserStep();
+        navigationStep = new NavigationStep();
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         Configuration.browser = ReadProperties.browserName();
