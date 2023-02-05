@@ -16,6 +16,7 @@ public class BaseTest {
 
     @BeforeSuite
     public void setUp() {
+        userStep = new UserStep();
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         Configuration.browser = ReadProperties.browserName();
