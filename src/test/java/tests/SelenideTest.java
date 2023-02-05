@@ -92,7 +92,9 @@ public class SelenideTest extends BaseTest {
 
 
     @Test
-    public void sauceDemo() {
+    public void sauceDemo() throws InterruptedException {
         open("/");
+        userStep.loginSuccessful(ReadProperties.username(),ReadProperties.password());
+        Thread.sleep(5000);
     }
 }

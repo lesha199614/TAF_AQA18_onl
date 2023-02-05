@@ -1,6 +1,7 @@
 package steps;
 
 import pages.LoginPage;
+import pages.ProductsPage;
 
 public class UserStep {
     private LoginPage loginPage;
@@ -11,8 +12,10 @@ public class UserStep {
         loginPage.getLogInButton().click();
     }
 
-    public void loginSuccessful () {
+    public ProductsPage loginSuccessful (String email, String psw) {
+        login(email, psw);
 
+        return new ProductsPage();
     }
 
     public LoginPage loginIncorrect(String email, String psw) {

@@ -6,10 +6,13 @@ import configuration.ReadProperties;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
+import steps.UserStep;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class BaseTest {
+
+    public UserStep userStep;
 
     @BeforeSuite
     public void setUp() {
