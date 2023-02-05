@@ -43,5 +43,6 @@ public class UserStep {
 
     public void setOrder() {
         cartPage.getCheckoutButton().click();
+        cartPage.getFirstName().val();
     }
 }
