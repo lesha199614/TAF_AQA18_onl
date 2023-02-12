@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="adf5d51b-fe16-45dc-bdf5-99ce9ca07596" name="Changes" comment="Initial">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/BookingStartPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepDefs/BookingStepsDefs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/BookingSearchResultPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/baseEntities/BaseCucumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/baseEntities/BaseCucumberTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BookingStartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BookingStartPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefs/UserStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefs/UserStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/CatalogPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CatalogPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/ItemPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ItemPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefs/BookingStepsDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefs/BookingStepsDefs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/homework.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/homework.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="pageObject" />
+        <entry key="$PROJECT_DIR$" value="advancedActions_HW" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -288,13 +290,6 @@
       <workItem from="1676223062168" duration="1586000" />
       <workItem from="1676224663900" duration="1037000" />
       <workItem from="1676233810319" duration="714000" />
-    </task>
-    <task id="LOCAL-00057" summary="Initial">
-      <created>1674943502642</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1674943502642</updated>
     </task>
     <task id="LOCAL-00058" summary="Initial">
       <created>1674949071201</created>
@@ -632,7 +627,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676237064618</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="Initial">
+      <created>1676240010328</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1676240010328</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -16,12 +16,12 @@ public class BookingStartPage extends BasePage {
     private final By helpLocator = By.xpath("//div[@data-testid='searchbox-layout-vertical']//div[@data-testid='autocomplete-result']");
 
     public WebElement getDestination () {
-        return driver.findElement(destinationLocator);
+        return waitsService.waitForExists(destinationLocator);
     }
     public WebElement getSearchButton () {
-        return driver.findElement(searchButtonLocator);
+        return waitsService.waitForExists(searchButtonLocator);
     }
     public WebElement getHelp () {
-        return driver.findElement(helpLocator);
+        return waitsService.waitForExists(helpLocator);
     }
 }

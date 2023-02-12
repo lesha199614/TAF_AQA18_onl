@@ -21,39 +21,39 @@ public class CartPage extends BasePage {
     private final By completeOrderLocator = By.className("complete-header");
 
     public WebElement getTitle() {
-        return driver.findElement(titleLocator);
+        return waitsService.waitForExists(titleLocator);
     }
 
     public WebElement getCheckoutButton() {
-        return driver.findElement(checkoutButtonLocator);
+        return waitsService.waitForExists(checkoutButtonLocator);
     }
 
     public WebElement getFirstName() {
-        return driver.findElement(firstNameLocator);
+        return waitsService.waitForExists(firstNameLocator);
     }
 
     public WebElement getLastName() {
-        return driver.findElement(lastNameLocator);
+        return waitsService.waitForExists(lastNameLocator);
     }
 
     public WebElement getPostalCode() {
-        return driver.findElement(postalCodeLocator);
+        return waitsService.waitForExists(postalCodeLocator);
     }
 
     public WebElement getFinishButton() {
-        return driver.findElement(finishButtonLocator);
+        return waitsService.waitForExists(finishButtonLocator);
     }
 
     public WebElement getContinueButton() {
-        return driver.findElement(continueButtonLocator);
+        return waitsService.waitForExists(continueButtonLocator);
     }
 
     public WebElement getBackToCatalogButton() {
-        return driver.findElement(BackToCatalogButtonLocator);
+        return waitsService.waitForExists(BackToCatalogButtonLocator);
     }
 
     public WebElement getCompleteOrder() {
-        return driver.findElement(completeOrderLocator);
+        return waitsService.waitForExists(completeOrderLocator);
     }
 
     public CartPage cartCheckOut() {

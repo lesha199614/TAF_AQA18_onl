@@ -17,22 +17,22 @@ public class ItemPage extends BasePage {
     private final By BackToCatalogButtonLocator = By.id("back-to-products");
 
     public WebElement getItemName() {
-        return driver.findElement(itemNameLocator);
+        return waitsService.waitForExists(itemNameLocator);
     }
 
     public WebElement getItemPrice() {
-        return driver.findElement(itemPriceLocator);
+        return waitsService.waitForExists(itemPriceLocator);
     }
 
     public WebElement getAddToCart() {
-        return driver.findElement(addToCartButtonLocator);
+        return waitsService.waitForExists(addToCartButtonLocator);
     }
 
     public WebElement getCartButton() {
-        return driver.findElement(CartButtonLocator);
+        return waitsService.waitForExists(CartButtonLocator);
     }
 
     public WebElement getBackToCatalog() {
-        return driver.findElement(BackToCatalogButtonLocator);
+        return waitsService.waitForExists(BackToCatalogButtonLocator);
     }
 }

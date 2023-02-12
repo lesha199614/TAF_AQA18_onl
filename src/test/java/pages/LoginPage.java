@@ -16,14 +16,14 @@ public class LoginPage extends BasePage {
     }
 
     public WebElement getUsernameInput() {
-        return driver.findElement(username);
+        return waitsService.waitForExists(username);
     }
 
     public WebElement getPassword() {
-        return  driver.findElement(passwordInputLocator);
+        return  waitsService.waitForExists(passwordInputLocator);
     }
 
     public WebElement getLogInButton() {
-        return driver.findElement(logInButtonLocator);
+        return waitsService.waitForExists(logInButtonLocator);
     }
 }

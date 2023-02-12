@@ -12,3 +12,4 @@ Feature: SauceDemo
   Scenario: Booking
     Given open Booking
     When search for "NYX Herzliya" destination
+    Then "NYX Herzliya" hotel result exist

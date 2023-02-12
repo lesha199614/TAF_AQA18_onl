@@ -18,11 +18,11 @@ public class CatalogPage extends BasePage {
     private final By addToCartLacators = By.className("add-to-cart-sauce-labs-backpack");
 
     public WebElement getTitle() {
-        return driver.findElement(titleLocator);
+        return waitsService.waitForExists(titleLocator);
     }
 
     public WebElement getCart() {
-        return driver.findElement(cartLocator);
+        return waitsService.waitForExists(cartLocator);
     }
 
     public List<WebElement> getItem() {
