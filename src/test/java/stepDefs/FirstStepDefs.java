@@ -3,12 +3,10 @@ package stepDefs;
 import baseEntities.BaseCucumberTest;
 import configuration.ReadProperties;
 import factory.BrowserFactory;
-import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pages.DashboardPage;
 import pages.LoginPage;
@@ -44,12 +42,12 @@ public class FirstStepDefs extends BaseCucumberTest {
 
     @Then("поле username отображается")
     public void isUsernameDisplayed() {
-        Assert.assertTrue(loginPage.getEmailInput().isDisplayed());
+        Assert.assertTrue(loginPage.getUsernameInput().isDisplayed());
     }
 
     @Then("ошибка не оботражается")
     public void isErrorDisplayed() {
-        Assert.assertFalse(loginPage.getErrorTextElement().isDisplayed());
+        Assert.assertFalse(loginPage.getUsernameInput().isDisplayed());
     }
 
     @Then("поле password отображается")

@@ -17,7 +17,7 @@ public class UserStep extends BaseStep {
     }
 
     public void login(String email, String psw) {
-        loginPage.getEmailInput().sendKeys(email);
+        loginPage.getUsernameInput().sendKeys(email);
         loginPage.getPassword().sendKeys(psw);
         loginPage.getLogInButton().click();
     }
