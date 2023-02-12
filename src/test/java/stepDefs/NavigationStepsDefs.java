@@ -27,4 +27,9 @@ public class NavigationStepsDefs extends BaseCucumberTest {
         catalogPage.getItem().get(0).click();
         return new ItemPage(driver);
     }
+    @When("open Cart")
+    public CartPage openCartFromItemPage() {
+        itemPage.getCartButton().click();
+        return new CartPage(driver);
+    }
 }

@@ -6,3 +6,4 @@ Feature: SauceDemo
     When open first Item
     * add item to Cart
     * open Cart
+    Then set order

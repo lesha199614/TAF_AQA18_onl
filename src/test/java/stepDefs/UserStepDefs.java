@@ -3,6 +3,7 @@ package stepDefs;
 import baseEntities.BaseCucumberTest;
 import configuration.ReadProperties;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.CartPage;
 import pages.CatalogPage;
@@ -40,5 +41,10 @@ public class UserStepDefs extends BaseCucumberTest {
     @When("add item to Cart")
     public void addItemToCart() {
         itemPage.getAddToCart().click();
+    }
+
+    @Then("set order")
+    public void setOrder() {
+        cartPage.
     }
 }

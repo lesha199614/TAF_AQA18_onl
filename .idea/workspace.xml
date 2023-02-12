@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="adf5d51b-fe16-45dc-bdf5-99ce9ca07596" name="Changes" comment="Initial">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/CartPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/ItemPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepDefs/NavigationStepsDefs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/baseEntities/BaseStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/baseEntities/BaseStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/baseEntities/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/baseEntities/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/CatalogPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CatalogPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/DashboardPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/project/AddProjectPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefs/FirstStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefs/FirstStepDefs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefs/UserStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefs/UserStepDefs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/NavigationSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/ProjectSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/UserStep.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoggerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/MilestoneTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SingletonTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/homework.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/homework.feature" afterDir="false" />
-    </list>
+    <list default="true" id="adf5d51b-fe16-45dc-bdf5-99ce9ca07596" name="Changes" comment="Initial" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -300,13 +279,6 @@
       <workItem from="1676223062168" duration="1586000" />
       <workItem from="1676224663900" duration="1037000" />
       <workItem from="1676233810319" duration="714000" />
-    </task>
-    <task id="LOCAL-00056" summary="Initial">
-      <created>1674933301725</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1674933301725</updated>
     </task>
     <task id="LOCAL-00057" summary="Initial">
       <created>1674943502642</created>
@@ -644,7 +616,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676235326598</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="Initial">
+      <created>1676237064618</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1676237064618</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
