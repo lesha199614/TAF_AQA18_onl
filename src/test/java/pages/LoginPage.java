@@ -1,8 +1,6 @@
 package pages;
 
 import baseEntities.BasePage;
-import elements.Button;
-import elements.UIElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,15 +15,15 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public UIElement getUsernameInput() {
-        return new UIElement(driver, username);
+    public WebElement getUsernameInput() {
+        return driver.findElement(username);
     }
 
     public WebElement getPassword() {
-        return driver.findElements(username);
+        return  driver.findElement(passwordInputLocator);
     }
 
-    public Button getLogInButton() {
-        return new Button(driver, logInButtonLocator);
+    public WebElement getLogInButton() {
+        return driver.findElement(logInButtonLocator);
     }
 }

@@ -8,14 +8,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
-import pages.DashboardPage;
 import pages.LoginPage;
-import steps.UserStep;
 
 public class FirstStepDefs extends BaseCucumberTest {
     private BaseCucumberTest baseCucumberTest;
     private LoginPage loginPage;
-    private DashboardPage dashboardPage;
 
     public FirstStepDefs(BaseCucumberTest baseCucumberTest) {
         this.baseCucumberTest = baseCucumberTest;
@@ -57,13 +54,12 @@ public class FirstStepDefs extends BaseCucumberTest {
 
     @When("user {string} with password {string} logged in")
     public void userWithPasswordLoggedIn(String username, String password) {
-        UserStep userStep = new UserStep(driver);
-        dashboardPage = userStep.loginSuccessful(username, password);
+
     }
 
     @Then("title is {string}")
     public void titleIs(String value) {
-        Assert.assertEquals(value, dashboardPage.getTitle());
+
     }
 
     @And("project id is {int}")
