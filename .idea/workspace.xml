@@ -76,22 +76,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Git.Branch.Popup.ShowAllRemotes": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/aliakseiv/Documents/IdeaTMS/Auto/TAF_AQA18_onl/TAF_AQA18_onl/src/test/resources/features",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "page.object.configurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/aliakseiv/Documents/IdeaTMS/Auto/TAF_AQA18_onl/TAF_AQA18_onl/src/test/resources/features&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;page.object.configurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources/features" />
@@ -114,7 +114,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Использование def разных файлов">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Простой тест без тела">
     <configuration name="Feature: first" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/first.feature" />
@@ -174,15 +174,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Параметризация при помощи таблицы значений" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Простой тест без тела" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/second.feature" />
-      <option name="GLUE" value="StepDefs" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/first.feature" />
+      <option name="GLUE" value="stepDefs" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="TAF_AQA18_onl" />
-      <option name="NAME_FILTER" value="^Параметризация при помощи таблицы значений$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Параметризация при помощи таблицы значений$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Параметризация при помощи таблицы значений" />
+      <option name="NAME_FILTER" value="^Простой тест без тела$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Простой тест без тела$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Простой тест без тела" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -207,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: Простой тест без тела" />
         <item itemvalue="Cucumber Java.Scenario: Использование def разных файлов" />
         <item itemvalue="Cucumber Java.Feature: first" />
         <item itemvalue="TestNG.RunCucumberTest" />
         <item itemvalue="Cucumber Java.Scenario: Просто тест с Given" />
-        <item itemvalue="Cucumber Java.Scenario: Параметризация при помощи таблицы значений" />
       </list>
     </recent_temporary>
   </component>
