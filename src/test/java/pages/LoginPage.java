@@ -5,6 +5,7 @@ import elements.Button;
 import elements.UIElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class LoginPage extends BasePage {
     // Блок описания локаторов для эментов
@@ -12,18 +13,19 @@ public class LoginPage extends BasePage {
     private final By passwordInputLocator = By.id("password");
     private final By logInButtonLocator = By.id("login-button");
 
-    // Блок иницализации страницы
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
-    @Override
-    protected By getPageIdentifier() {
-        return logInButtonLocator;
+    public UIElement getUsernameInput() {
+        return new UIElement(driver, username);
     }
 
-    // Блок атомарных методов
-    public UIElement getUsernameInput() { return new UIElement(driver, username);}
-    public UIElement getPassword() { return new UIElement(driver, passwordInputLocator);}
-    public Button getLogInButton() { return new Button(driver, logInButtonLocator);}
+    public WebElement getPassword() {
+        return driver.findElements(username);
+    }
+
+    public Button getLogInButton() {
+        return new Button(driver, logInButtonLocator);
+    }
 }
