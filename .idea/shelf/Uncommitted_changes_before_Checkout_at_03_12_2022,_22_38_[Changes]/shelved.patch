@@ -1,0 +1,71 @@
+Index: src/test/java/tests/data/StaticProvider.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package tests.data;\n\nimport org.testng.annotations.DataProvider;\n\npublic class StaticProvider {\n\n    @DataProvider (name = \"dataFotSumTest\")\n    public static Object[][] dataForSumTest(){\n        return new Object[][] {\n            {-2,-3,-5},\n            {0,0,0},\n            {2,3,5}\n        };\n    }\n}\n
+===================================================================
+diff --git a/src/test/java/tests/data/StaticProvider.java b/src/test/java/tests/data/StaticProvider.java
+--- a/src/test/java/tests/data/StaticProvider.java	
++++ b/src/test/java/tests/data/StaticProvider.java	
+@@ -4,12 +4,26 @@
+ 
+ public class StaticProvider {
+ 
+-    @DataProvider (name = "dataFotSumTest")
+-    public static Object[][] dataForSumTest(){
+-        return new Object[][] {
+-            {-2,-3,-5},
+-            {0,0,0},
+-            {2,3,5}
++    @DataProvider(name = "dataFotSumTest")
++    public static Object[][] dataForSumTest() {
++        return new Object[][]{
++                {-2, -3, -5},
++                {0, 0, 0},
++                {2, 3, 5}
+         };
+     }
++
++    @DataProvider(name = "dataForDivTest")
++    public static Object[][] dataForDivTest() {
++        return new Object[][]{
++                {0, 5, 0},
++                {5, 1, 1},
++                {5, 5, 1},
++                {5, 5, 1},
++                {5, 5, 1},
++                {5, 5, 1},
++
++        };
++    }
++
+ }
+Index: src/test/java/tests/Calculator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package tests;\n\npublic class Calculator {\n    public int sum(int a, int b) {\n        return a + b;\n    }\n}\n
+===================================================================
+diff --git a/src/test/java/tests/Calculator.java b/src/test/java/tests/Calculator.java
+--- a/src/test/java/tests/Calculator.java	
++++ b/src/test/java/tests/Calculator.java	
+@@ -1,7 +1,21 @@
+ package tests;
+ 
+ public class Calculator {
++    private Exception NullPointerException;
++    private Exception ArithmeticException;
++
+     public int sum(int a, int b) {
+         return a + b;
+     }
++
++    public double div(int a, int b) {
++        return (double) a / b;
++    }
++
++    public double div(double a, double b) {
++        if (b == 0) {
++            System.out.println("Нельзя делить на 0");
++        }
++        return (a / b);
++    }
+ }
