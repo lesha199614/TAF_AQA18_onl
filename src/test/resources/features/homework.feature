@@ -13,3 +13,4 @@ Feature: SauceDemo
     Given open Booking
     When search for "NYX Herzliya" destination
     Then "NYX Herzliya" hotel result exist
+    * Rating of "NYX Herzliya" equals "8.5"

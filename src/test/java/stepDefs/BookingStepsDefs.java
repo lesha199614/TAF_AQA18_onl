@@ -4,6 +4,7 @@ import baseEntities.BaseCucumberTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
 import pages.BookingSearchResultPage;
 import pages.BookingStartPage;
 
@@ -25,14 +26,21 @@ public class BookingStepsDefs extends BaseCucumberTest {
     }
 
     @When("search for {string} destination")
-    public void searchForHotel(String hotel) throws InterruptedException {
+    public void searchForHotel(String hotel) {
         bookingStartPage.getDestination().sendKeys(hotel);
         bookingStartPage.getHelp().click();
         bookingStartPage.getSearchButton().click();
-        Thread.sleep(5000);
     }
 
     @Then("{string} hotel result exist")
     public void hotelResultExist(String hotel) {
+        Assert.assertTrue(bookingSearchResultPage.getListOfHotelTitles().contains(hotel));
+    }
+
+    @Then("Rating of {string} equals {string}")
+    public void ratingEquals(String hotel, String rating) {
+        Assert.assertEquals(bookingSearchResultPage.getListOfHotelRatings().get(
+                bookingSearchResultPage.getListOfHotelTitles().indexOf(hotel))
+                , rating);
     }
 }
