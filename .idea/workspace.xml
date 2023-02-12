@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="adf5d51b-fe16-45dc-bdf5-99ce9ca07596" name="Changes" comment="Initial" />
+    <list default="true" id="adf5d51b-fe16-45dc-bdf5-99ce9ca07596" name="Changes" comment="Initial">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/BookingStartPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/stepDefs/BookingStepsDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/baseEntities/BaseCucumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/baseEntities/BaseCucumberTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefs/UserStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefs/UserStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/homework.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/homework.feature" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,15 +92,16 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: E2E Test (1)">
-    <configuration name="Feature: first" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Booking">
+    <configuration name="Scenario: Простой тест с Given" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/first.feature" />
       <option name="GLUE" value="stepDefs" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="TAF_AQA18_onl" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: first" />
+      <option name="NAME_FILTER" value="^Простой тест с Given$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Простой тест с Given$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Простой тест с Given" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -104,15 +113,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Простой тест с Given" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Booking" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/first.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/homework.feature" />
       <option name="GLUE" value="stepDefs" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="TAF_AQA18_onl" />
-      <option name="NAME_FILTER" value="^Простой тест с Given$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Простой тест с Given$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Простой тест с Given" />
+      <option name="NAME_FILTER" value="^Booking$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Booking$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Booking" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -177,11 +186,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: Booking" />
         <item itemvalue="Cucumber Java.Scenario: E2E Test (1)" />
         <item itemvalue="Cucumber Java.Scenario: E2E Test" />
         <item itemvalue="Cucumber Java.Scenario: Простой тест с Given" />
         <item itemvalue="TestNG.RunCucumberTest" />
-        <item itemvalue="Cucumber Java.Feature: first" />
       </list>
     </recent_temporary>
   </component>
@@ -664,6 +673,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="RELOAD_CONTEXT" value="false" />
     <MESSAGE value="Initial" />
     <option name="LAST_COMMIT_MESSAGE" value="Initial" />
   </component>

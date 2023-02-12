@@ -11,13 +11,13 @@ public class CartPage extends BasePage {
     }
 
     private final By titleLocator = By.className("title");
-    private final By checkoutButtonLocator = By.className("checkout");
-    private final By firstNameLocator = By.className("first-name");
-    private final By lastNameLocator = By.className("last-name");
-    private final By postalCodeLocator = By.className("postal-code");
-    private final By finishButtonLocator = By.className("finish");
-    private final By continueButtonLocator = By.className("continue");
-    private final By BackToCatalogButtonLocator = By.className("back-to-products");
+    private final By checkoutButtonLocator = By.id("checkout");
+    private final By firstNameLocator = By.id("first-name");
+    private final By lastNameLocator = By.id("last-name");
+    private final By postalCodeLocator = By.id("postal-code");
+    private final By finishButtonLocator = By.id("finish");
+    private final By continueButtonLocator = By.id("continue");
+    private final By BackToCatalogButtonLocator = By.id("back-to-products");
     private final By completeOrderLocator = By.className("complete-header");
 
     public WebElement getTitle() {

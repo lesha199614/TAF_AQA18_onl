@@ -6,4 +6,9 @@ Feature: SauceDemo
     When open first Item
     * add item to Cart
     * open Cart
-    Then set order
+    * complete order with first name "Alex", last name "Vayteh", zip code "01-218"
+    Then Text "THANK YOU FOR YOUR ORDER" is shown
+
+  Scenario: Booking
+    Given open Booking
+    When search for "NYX Herzliya" destination

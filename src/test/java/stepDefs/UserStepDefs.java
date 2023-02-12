@@ -5,6 +5,7 @@ import configuration.ReadProperties;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
 import pages.CartPage;
 import pages.CatalogPage;
 import pages.ItemPage;
@@ -43,8 +44,20 @@ public class UserStepDefs extends BaseCucumberTest {
         itemPage.getAddToCart().click();
     }
 
-    @Then("set order")
-    public void setOrder() {
-        cartPage.
+
+    @When("complete order with first name {string}, last name {string}, zip code {string}")
+    public void completeOrder(String firstName, String lastName, String zip) {
+        cartPage.getCheckoutButton().click();
+        cartPage.getFirstName().sendKeys(firstName);
+        cartPage.getLastName().sendKeys(lastName);
+        cartPage.getPostalCode().sendKeys(zip);
+        cartPage.getContinueButton().click();
+        cartPage.getFinishButton().click();
     }
+
+    @Then("Text {string} is shown")
+    public void completeOrderText (String completeText) {
+        Assert.assertEquals(cartPage.getCompleteOrder().getText(),completeText);
+    }
+
 }
