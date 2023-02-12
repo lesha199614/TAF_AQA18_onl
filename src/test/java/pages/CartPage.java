@@ -55,7 +55,7 @@ public class CartPage extends BasePage {
     public WebElement getCompleteOrder() {
         return waitsService.waitForExists(completeOrderLocator);
     }
-
+//comment
     public CartPage cartCheckOut() {
         getCheckoutButton().click();
         return this;
