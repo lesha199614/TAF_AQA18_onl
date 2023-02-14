@@ -1,0 +1,301 @@
+{
+	"info": {
+		"_postman_id": "a4c43b3d-e69e-444b-9f99-e724bc1d6270",
+		"name": "TestRail",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20628630"
+	},
+	"item": [
+		{
+			"name": "Get Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{login}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v2/get_users",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"get_users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Project",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{login}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{$randomCatchPhrase}}\",\n    \"announcement\": \"{{$randomCatchPhraseDescriptor}}\",\n    \"show_announcement\": {{$randomBoolean}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v2/add_project",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"add_project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Milestones",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{login}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v2/get_milestones/{{projectId}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"get_milestones",
+						"{{projectId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Milestone",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{login}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{$randomCatchPhrase}}\",\n    \"due_on\": {{$timestamp}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v2/add_milestone/{{projectId}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"add_milestone",
+						"{{projectId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Milestone",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{login}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v2/get_milestones/{{projectId}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"get_milestones",
+						"{{projectId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Milestone",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{login}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"is_completed\": {{$randomBoolean}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v2/update_milestone/{{milestoneId}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"update_milestone",
+						"{{milestoneId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Milestone",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{login}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"is_completed\": {{$randomBoolean}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v2/update_milestone/{{milestoneId}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"update_milestone",
+						"{{milestoneId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
