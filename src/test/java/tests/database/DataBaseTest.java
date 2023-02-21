@@ -1,11 +1,13 @@
 package tests.database;
 
+import baseEntities.BaseApiGSONTest;
 import dbTables.CaseTable;
 import org.testng.annotations.Test;
 
-public class DataBaseTest {
+public class DataBaseTest extends BaseApiGSONTest {
     @Test
     public void createCaseTable(){
-        CaseTable testCasesTable = new CaseTable(d)
+        CaseTable testCasesTable = new CaseTable(dbService);
+        testCasesTable.createTable();
     }
 }
