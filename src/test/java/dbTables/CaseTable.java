@@ -26,7 +26,7 @@ public class CaseTable {
                 "    typeId            INTEGER," +
                 "    priorityId        INTEGER," +
                 "    estimate          CHARACTER VARYING(255)," +
-                "    references        CHARACTER VARYING(255)," +
+                "    refs        CHARACTER VARYING(255)," +
                 "    automationType    CHARACTER VARYING(255)," +
                 "    preconditions     CHARACTER VARYING(255)," +
                 "    steps             CHARACTER VARYING(255)," +
@@ -37,7 +37,7 @@ public class CaseTable {
 
     public void dropTable() {
         logger.info("Drop customers TestCases...");
-        String dropTableSQL = "DROP TABLE if exist public.TestCases";
+        String dropTableSQL = "DROP TABLE if exists public.TestCases";
         dbService.executeSQL(dropTableSQL);
     }
 
@@ -49,12 +49,12 @@ public class CaseTable {
 
     public void addTestCase(TestCase testCase) {
         String insertTableSQL = "INSERT INTO public.TestCases(" +
-                "title, sectionId, templateId, typeId, priorityId, estimate, references, automationType," +
+                "title, sectionId, templateId, typeId, priorityId, estimate, refs, automationType," +
                 "preconditions, steps, expectedResult)" +
                 "VALUES ('" + testCase.getTitle() + "', '" + testCase.getSectionId() +
                 "', '" + testCase.getTemplateId() + "', " + testCase.getTypeId() + "', " +
                 testCase.getPriorityId() + "', " + testCase.getEstimate() + "', " +
-                testCase.getReferences() + "', " + testCase.getAutomationType() + "', " +
+                testCase.getRefs() + "', " + testCase.getAutomationType() + "', " +
                 testCase.getPreconditions() + "', " + testCase.getSteps() + "', " + testCase.getExpectedResult() +");";
         dbService.executeSQL(insertTableSQL);
     }
@@ -63,6 +63,13 @@ public class CaseTable {
         String sql = "SELECT * FROM public.TestCases " +
                 "WHERE id = " + id;
         return dbService.executeQuery(sql);
+    }
+
+    public void addTestCase1(TestCase testCase) {
+        String insertTableSQL = "INSERT INTO public.TestCases(" +
+                "title, sectionId)" +
+                "VALUES ('" + testCase.getTitle() + "', '" + testCase.getSectionId() +"');";
+        dbService.executeSQL(insertTableSQL);
     }
 
 }

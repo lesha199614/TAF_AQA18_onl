@@ -24,7 +24,7 @@ public class TestCase {
     private int priorityId;
     private String estimate;
     @SerializedName(value = "refs")
-    private String references;
+    private String refs;
     @SerializedName(value = "custom_automation_type")
     private String automationType;
     @SerializedName(value = "custom_preconds")
