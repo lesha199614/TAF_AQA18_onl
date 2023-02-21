@@ -1,5 +1,6 @@
 package models;
 
+import com.google.gson.annotations.SerializedName;
 import lombok.*;
 
 @Data
@@ -12,7 +13,7 @@ public class Milestone {
     private String name;
     private String references;
     private String description;
-    @ToString.Exclude
+    @SerializedName(value = "is_completed")
     private boolean completed;
 
 }

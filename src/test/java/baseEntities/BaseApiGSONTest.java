@@ -1,10 +1,13 @@
 package baseEntities;
 
+import adapters.MilestoneAdapter;
+import adapters.ProjectAdapter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import configuration.ReadProperties;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import org.apache.http.protocol.HTTP;
 import org.testng.annotations.BeforeTest;
 

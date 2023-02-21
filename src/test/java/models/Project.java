@@ -14,6 +14,12 @@ public class Project {
     @SerializedName(value = "show_announcement")
     private boolean shownAnnouncement;
 
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
     private boolean deleted;
 
     public String getName() {

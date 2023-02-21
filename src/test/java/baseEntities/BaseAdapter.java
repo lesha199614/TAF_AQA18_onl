@@ -1,4 +1,4 @@
-package adapters;
+package baseEntities;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeTest;
 public class BaseAdapter {
     protected Gson gson;
 
-    public void setupApi() {
+    public BaseAdapter() {
         gson = new Gson();
         gson = new GsonBuilder()
                 .excludeFieldsWithoutExposeAnnotation().create();
