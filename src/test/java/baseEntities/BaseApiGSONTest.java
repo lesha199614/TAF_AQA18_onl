@@ -6,9 +6,11 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import configuration.ReadProperties;
 import dbTables.CaseTable;
+import dbTables.MilestoneTable;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import models.Milestone;
 import org.apache.http.protocol.HTTP;
 import org.testng.annotations.BeforeTest;
 import services.DataBaseService;
@@ -19,6 +21,7 @@ public class BaseApiGSONTest {
     protected Gson gson;
     protected DataBaseService dbService;
     protected CaseTable testCasesTable;
+    protected MilestoneTable milestoneTable;
 
     @BeforeTest
     public void setupApi() {
@@ -34,5 +37,6 @@ public class BaseApiGSONTest {
 
         dbService = new DataBaseService();
         testCasesTable = new CaseTable(dbService);
+        milestoneTable = new MilestoneTable(dbService);
     }
 }

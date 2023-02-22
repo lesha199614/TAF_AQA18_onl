@@ -7,20 +7,21 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class DataBaseTest extends BaseApiGSONTest {
+public class DbCaseTest extends BaseApiGSONTest {
     TestCase expectedCase;
     int caseId;
 
     @Test
-    public void dropTable(){
+    public void dropTable() {
         testCasesTable.dropTable();
     }
-    @Test (dependsOnMethods = "dropTable")
-    public void createCaseTable(){
+
+    @Test(dependsOnMethods = "dropTable")
+    public void createCaseTable() {
         testCasesTable.createTable();
     }
 
-    @Test (dependsOnMethods = "createCaseTable")
+    @Test(dependsOnMethods = "createCaseTable")
     public void addCaseToTable() {
         expectedCase = new TestCase();
         expectedCase.setTitle("New Test Case");
@@ -31,7 +32,7 @@ public class DataBaseTest extends BaseApiGSONTest {
         testCasesTable.addTestCase(expectedCase);
     }
 
-    @Test (dependsOnMethods = "addCaseToTable")
+    @Test(dependsOnMethods = "addCaseToTable")
     public void addCase() {
         CaseAdapter caseAdapter = new CaseAdapter();
         int sectionId = 1;
@@ -49,7 +50,7 @@ public class DataBaseTest extends BaseApiGSONTest {
         Assert.assertEquals(actualCase, expectedCase);
     }
 
-    @Test (dependsOnMethods = "get")
+    @Test(dependsOnMethods = "get")
     public void updateCase() {
         CaseAdapter caseAdapter = new CaseAdapter();
         expectedCase = new TestCase();
@@ -61,10 +62,25 @@ public class DataBaseTest extends BaseApiGSONTest {
         expectedCase.setPreconditions("New preconditions");
         expectedCase.setSteps("New steps");
         expectedCase.setExpectedResult("New expected result");
-        testCasesTable.updateTestCase(expectedCase,1);
+        testCasesTable.updateTestCase(expectedCase, 1);
         expectedCase = testCasesTable.getTestCasesById(1);
         TestCase actualCase = caseAdapter.update(expectedCase, caseId);
         Assert.assertEquals(actualCase, expectedCase);
     }
 
+    @Test(dependsOnMethods = "updateCase")
+    public void moveToSection() {
+        CaseAdapter caseAdapter = new CaseAdapter();
+        int newSectionId = 2;
+        caseAdapter.moveToSection(newSectionId, caseId);
+        TestCase actualCase = caseAdapter.get(caseId);
+        Assert.assertEquals(newSectionId, actualCase.getSectionId());
+    }
+
+    @Test(dependsOnMethods = "moveToSection")
+    public void deleteCase() {
+        CaseAdapter caseAdapter = new CaseAdapter();
+        caseAdapter.deleteCase(caseId);
+        caseAdapter.getDeleted(caseId);
+    }
 }

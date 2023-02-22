@@ -11,7 +11,8 @@ public class Milestone {
 
     @NonNull
     private String name;
-    private String references;
+    @SerializedName(value = "references")
+    private String refs;
     private String description;
     @SerializedName(value = "is_completed")
     private boolean completed;

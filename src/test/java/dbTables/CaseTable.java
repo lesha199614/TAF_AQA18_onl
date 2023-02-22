@@ -83,12 +83,6 @@ public class CaseTable {
         return resultCase;
     }
 
-    public void addTestCase1(TestCase testCase) {
-        String insertTableSQL = "INSERT INTO public.TestCases(" +
-                "title, sectionId)" +
-                "VALUES ('" + testCase.getTitle() + "', '" + testCase.getSectionId() + "');";
-        dbService.executeSQL(insertTableSQL);
-    }
 
     public void updateTestCase(TestCase testCase, int id) {
         String insertTableSQL = "UPDATE public.TestCases " +

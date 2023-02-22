@@ -61,4 +61,15 @@ public class MilestoneAdapter {
                 .then()
                 .statusCode(HttpStatus.SC_OK);
     }
+
+    public void getDeletedMilestone(int milestoneId) {
+        given()
+                .pathParam("milestone_id", milestoneId)
+                .log().uri()
+                .when()
+                .get(Endpoints.GET_MILESTONE)
+                .then()
+                .log().body()
+                .statusCode(HttpStatus.SC_BAD_REQUEST);
+    }
 }

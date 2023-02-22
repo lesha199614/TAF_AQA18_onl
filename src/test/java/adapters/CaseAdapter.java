@@ -47,6 +47,16 @@ public class CaseAdapter {
                 .extract().as(TestCase.class, ObjectMapperType.GSON);
     }
 
+    public void getDeleted(int caseId) {
+        given()
+                .pathParam("case_id", caseId)
+                .log().uri()
+                .when()
+                .get(Endpoints.GET_CASE)
+                .then()
+                .statusCode(HttpStatus.SC_BAD_REQUEST);
+    }
+
     public TestCase moveToSection(int sectionId, int caseId) {
         return given()
                 .pathParam("section_id", sectionId)
