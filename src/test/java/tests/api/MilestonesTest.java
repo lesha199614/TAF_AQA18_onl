@@ -7,10 +7,6 @@ import models.Milestone;
 import models.Project;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static io.restassured.RestAssured.given;
-
-
 public class MilestonesTest extends BaseApiGSONTest {
 
     int projectId;
@@ -65,5 +61,6 @@ public class MilestonesTest extends BaseApiGSONTest {
     @Test(dependsOnMethods = "updateMilestone")
     public void deleteMilestone() {
         milestoneAdapter.deleteMilestone(milestoneId);
+        milestoneAdapter.getDeletedMilestone(milestoneId);
     }
 }

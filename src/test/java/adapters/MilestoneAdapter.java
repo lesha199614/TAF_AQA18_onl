@@ -36,6 +36,16 @@ public class MilestoneAdapter {
                 .body("id", equalTo(milestoneId))
                 .extract().as(Milestone.class, ObjectMapperType.GSON);
     }
+    public void getDeletedMilestone(int milestoneId) {
+        given()
+                .pathParam("milestone_id", milestoneId)
+                .log().uri()
+                .when()
+                .get(Endpoints.GET_MILESTONE)
+                .then()
+                .log().body()
+                .statusCode(HttpStatus.SC_BAD_REQUEST);
+    }
 
     public Milestone updateMilestone(int milestoneId, Milestone updatedMilestone) {
         return given()

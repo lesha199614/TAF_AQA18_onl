@@ -56,5 +56,6 @@ public class CasesTest extends BaseApiGSONTest {
     @Test(dependsOnMethods = "moveToSection")
     public void deleteCase() {
         caseAdapter.deleteCase(caseId);
+        caseAdapter.getDeleted(caseId);
     }
 }
