@@ -22,11 +22,8 @@ public class TestCase {
     @NonNull
     @SerializedName(value = "priority_id")
     private int priorityId;
-    private String estimate;
     @SerializedName(value = "refs")
     private String refs;
-    @SerializedName(value = "custom_automation_type")
-    private String automationType;
     @SerializedName(value = "custom_preconds")
     private String preconditions;
     @SerializedName(value = "custom_steps")

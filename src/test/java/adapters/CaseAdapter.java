@@ -30,8 +30,8 @@ public class CaseAdapter {
                 .when()
                 .post(Endpoints.UPDATE_CASE)
                 .then()
-                .statusCode(HttpStatus.SC_OK)
                 .log().all()
+                .statusCode(HttpStatus.SC_OK)
                 .extract().as(TestCase.class, ObjectMapperType.GSON);
     }
 

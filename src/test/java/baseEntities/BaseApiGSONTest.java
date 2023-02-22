@@ -18,6 +18,7 @@ import static io.restassured.RestAssured.given;
 public class BaseApiGSONTest {
     protected Gson gson;
     protected DataBaseService dbService;
+    protected CaseTable testCasesTable;
 
     @BeforeTest
     public void setupApi() {
@@ -32,5 +33,6 @@ public class BaseApiGSONTest {
                 .header(HTTP.CONTENT_TYPE, ContentType.JSON);
 
         dbService = new DataBaseService();
+        testCasesTable = new CaseTable(dbService);
     }
 }

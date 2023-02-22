@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import services.DataBaseService;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class CaseTable {
     Logger logger = LogManager.getLogger(CaseTable.class);
@@ -25,7 +26,6 @@ public class CaseTable {
                 "    templateId        INTEGER," +
                 "    typeId            INTEGER," +
                 "    priorityId        INTEGER," +
-                "    estimate          CHARACTER VARYING(255)," +
                 "    refs        CHARACTER VARYING(255)," +
                 "    automationType    CHARACTER VARYING(255)," +
                 "    preconditions     CHARACTER VARYING(255)," +
@@ -49,27 +49,59 @@ public class CaseTable {
 
     public void addTestCase(TestCase testCase) {
         String insertTableSQL = "INSERT INTO public.TestCases(" +
-                "title, sectionId, templateId, typeId, priorityId, estimate, refs, automationType," +
+                "title, sectionId, templateId, typeId, priorityId, refs," +
                 "preconditions, steps, expectedResult)" +
                 "VALUES ('" + testCase.getTitle() + "', '" + testCase.getSectionId() +
-                "', '" + testCase.getTemplateId() + "', " + testCase.getTypeId() + "', " +
-                testCase.getPriorityId() + "', " + testCase.getEstimate() + "', " +
-                testCase.getRefs() + "', " + testCase.getAutomationType() + "', " +
-                testCase.getPreconditions() + "', " + testCase.getSteps() + "', " + testCase.getExpectedResult() +");";
+                "', '" + testCase.getTemplateId() + "', '" + testCase.getTypeId() + "', '" +
+                testCase.getPriorityId() + "', '" +
+                testCase.getRefs() + "', '"  + testCase.getPreconditions() + "', '"
+                + testCase.getSteps() + "', '" + testCase.getExpectedResult() + "');";
         dbService.executeSQL(insertTableSQL);
     }
 
-    public ResultSet getTestCasesById(int id) {
+    public TestCase getTestCasesById(int id) {
         String sql = "SELECT * FROM public.TestCases " +
                 "WHERE id = " + id;
-        return dbService.executeQuery(sql);
+        ResultSet rs = dbService.executeQuery(sql);
+        TestCase resultCase = new TestCase();
+        try {
+            while (rs.next()) {
+                resultCase.setId(rs.getInt("id"));
+                resultCase.setTitle(rs.getString("title"));
+                resultCase.setSectionId(rs.getInt("sectionId"));
+                resultCase.setTemplateId(rs.getInt("templateId"));
+                resultCase.setTypeId(rs.getInt("typeId"));
+                resultCase.setPriorityId(rs.getInt("priorityId"));
+                resultCase.setRefs(rs.getString("refs"));
+                resultCase.setPreconditions(rs.getString("preconditions"));
+                resultCase.setSteps(rs.getString("steps"));
+                resultCase.setExpectedResult(rs.getString("expectedResult"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return resultCase;
     }
 
     public void addTestCase1(TestCase testCase) {
         String insertTableSQL = "INSERT INTO public.TestCases(" +
                 "title, sectionId)" +
-                "VALUES ('" + testCase.getTitle() + "', '" + testCase.getSectionId() +"');";
+                "VALUES ('" + testCase.getTitle() + "', '" + testCase.getSectionId() + "');";
         dbService.executeSQL(insertTableSQL);
     }
 
+    public void updateTestCase(TestCase testCase, int id) {
+        String insertTableSQL = "UPDATE public.TestCases " +
+                "SET title = '" + testCase.getTitle() + "', " +
+                "sectionId = '" + testCase.getSectionId() + "', " +
+                "templateId = '" + testCase.getTemplateId() + "', " +
+                "typeId = '" + testCase.getTypeId() + "', " +
+                "priorityId = '" + testCase.getPriorityId() + "', " +
+                "refs = '" + testCase.getRefs() + "', " +
+                "preconditions = '" + testCase.getPreconditions() + "', " +
+                "steps = '" + testCase.getSteps() + "', " +
+                "expectedResult = '" + testCase.getExpectedResult() + "' " +
+                "WHERE id = " + id;
+        dbService.executeSQL(insertTableSQL);
+    }
 }
