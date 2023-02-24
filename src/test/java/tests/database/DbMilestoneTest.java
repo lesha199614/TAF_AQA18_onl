@@ -62,7 +62,7 @@ public class DbMilestoneTest extends BaseApiGSONTest {
     public void getMilestone() {
         MilestoneAdapter milestoneAdapter = new MilestoneAdapter();
         Milestone actualMilestone = milestoneAdapter.getMilestone(milestoneId);
-        //Assert.assertEquals(actualMilestone, expectedMilestone);
+        Assert.assertEquals(actualMilestone, expectedMilestone);
     }
 
     @Test(dependsOnMethods = "getMilestone")
