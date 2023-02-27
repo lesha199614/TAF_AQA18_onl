@@ -46,8 +46,6 @@ public class MilestonesTest extends BaseApiGSONTest {
     @Test(dependsOnMethods = "addMilestone")
     public void getMilestone() {
         Milestone actualMilestone = milestoneAdapter.getMilestone(milestoneId);
-        System.out.println(actualMilestone.toString());
-        System.out.println(expectedMilestone.toString());
         Assert.assertEquals(actualMilestone, expectedMilestone);
     }
 
