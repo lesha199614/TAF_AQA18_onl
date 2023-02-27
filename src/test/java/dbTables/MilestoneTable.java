@@ -46,8 +46,8 @@ public class MilestoneTable {
     public void addMilestone(Milestone milestone) {
         String insertTableSQL = "INSERT INTO public.Milestones(" +
                 "name, refs, description, completed)" +
-                "VALUES ('" + milestone.getName() + "', '" + milestone.getRefs() +
-                "', '" + milestone.getDescription() + "', '" + milestone.isCompleted() + "');";
+                "VALUES ('" + milestone.getName() + "', " + milestone.getRefs() +
+                ", '" + milestone.getDescription() + "', '" + milestone.isCompleted() + "');";
         dbService.executeSQL(insertTableSQL);
     }
 
